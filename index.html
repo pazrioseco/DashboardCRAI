@@ -61,11 +61,30 @@
         .percent-medium { background-color: #F59E0B; /* yellow-500 */ }
         .percent-low { background-color: #EF4444; /* red-500 */ }
         .percent-unavailable { background-color: #9CA3AF; /* gray-400 */ }
+        
+        /* Estilo para el logo */
+        .logo-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 1rem; /* p-4 */
+            z-index: 1000; /* Asegura que el logo esté por encima de otros elementos */
+        }
+        .logo-container img {
+            max-height: 60px; /* Ajusta el tamaño según sea necesario */
+            width: auto;
+            border-radius: 0.5rem; /* rounded-md */
+        }
     </style>
 </head>
 <body class="bg-gray-100 min-h-screen">
+    <!-- Contenedor para el logo -->
+    <div class="logo-container">
+        <!-- Enlace al logo actualizado con la URL "raw" correcta -->
+        <img src="https://raw.githubusercontent.com/pazrioseco/DashboardCRAI/main/LOGO%20CRAI.png" alt="Logo" onerror="this.onerror=null; this.src='https://placehold.co/150x60/cccccc/ffffff?text=Logo';" class="rounded-md">
+    </div>
 
-    <div class="container py-8">
+    <div class="container pt-24"> <!-- Aumentado el padding-top para dejar espacio para el logo -->
         <h1 class="text-4xl font-bold text-center text-gray-800 mb-8 md:mb-12">Coberturas bibliográficas por carrera</h1>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
