@@ -7,8 +7,6 @@
     <!-- Carga de Tailwind CSS para estilos -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Carga de Chart.js para gráficos -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -54,46 +52,58 @@
         }
 
         /* Clases de utilidad para los porcentajes */
-        .percent-high { background-color: #059669; /* green-600 */ }
-        .percent-medium-high { background-color: #10B981; /* green-500 */ }
-        .percent-medium { background-color: #F59E0B; /* yellow-500 */ }
-        .percent-low { background-color: #EF4444; /* red-500 */ }
-        .percent-unavailable { background-color: #9CA3AF; /* gray-400 */ }
+        .percent-high { background-color: #059669; }
+        .percent-medium-high { background-color: #10B981; }
+        .percent-medium { background-color: #F59E0B; }
+        .percent-low { background-color: #EF4444; }
         
         /* Estilo para el logo */
         .logo-container {
             position: absolute;
             top: 0;
             left: 0;
-            padding: 1rem; /* p-4 */
-            z-index: 1000; /* Asegura que el logo esté por encima de otros elementos */
+            padding: 1rem;
+            z-index: 1000;
         }
         .logo-container img {
-            max-height: 60px; /* Ajusta el tamaño según sea necesario */
+            max-height: 60px;
             width: auto;
-            border-radius: 0.5rem; /* rounded-md */
+            border-radius: 0.5rem;
+        }
+
+        /* Estilos para la barra de progreso */
+        .progress-bar-bg {
+            background-color: #e5e7eb;
+            border-radius: 0.5rem;
+            height: 1.5rem;
+            overflow: hidden;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 0.5rem;
+            transition: width 0.5s ease-in-out;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            line-height: 1.5rem;
         }
     </style>
 </head>
 <body class="bg-gray-100 min-h-screen">
-    <!-- Contenedor para el logo -->
     <div class="logo-container">
-        <!-- Enlace al logo actualizado con la URL "raw" correcta -->
         <img src="https://raw.githubusercontent.com/pazrioseco/DashboardCRAI/main/LOGO%20CRAI.png" alt="Logo" onerror="this.onerror=null; this.src='https://placehold.co/150x60/cccccc/ffffff?text=Logo';" class="rounded-md">
     </div>
 
-    <div class="container pt-24"> <!-- Aumentado el padding-top para dejar espacio para el logo -->
+    <div class="container pt-24">
         <h1 class="text-4xl font-bold text-center text-gray-800 mb-8 md:mb-12">Coberturas bibliográficas por carrera</h1>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <!-- Filtro de Facultad -->
             <div class="card">
                 <label for="faculty-filter" class="block text-gray-700 text-lg font-medium mb-2">Filtrar por Facultad:</label>
                 <select id="faculty-filter" class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-md">
                     <option value="all">Todas las Facultades</option>
                 </select>
             </div>
-            <!-- Filtro de Carrera -->
             <div class="card">
                 <label for="career-filter" class="block text-gray-700 text-lg font-medium mb-2">Filtrar por Carrera:</label>
                 <select id="career-filter" class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-md">
@@ -102,85 +112,77 @@
             </div>
         </div>
 
-        <!-- Resumen de KPIs con 4 columnas -->
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <div class="card text-center">
-                <p class="text-sm font-semibold text-gray-500 uppercase">BBAS Títulos Únicos</p>
-                <p id="avg-bbas-unique" class="text-4xl font-bold text-teal-600 mt-2">N/A</p>
-            </div>
-            <div class="card text-center">
-                <p class="text-sm font-semibold text-gray-500 uppercase">BCOM Títulos Únicos</p>
-                <p id="avg-bcom-unique" class="text-4xl font-bold text-sky-600 mt-2">N/A</p>
-            </div>
-            <div class="card text-center">
-                <p class="text-sm font-semibold text-gray-500 uppercase">BBAS EBOOKS</p>
-                <p id="avg-bbas-ebooks" class="text-4xl font-bold text-indigo-600 mt-2">N/A</p>
-            </div>
-            <div class="card text-center">
-                <p class="text-sm font-semibold text-gray-500 uppercase">BCOM EBOOKS</p>
-                <p id="avg-bcom-ebooks" class="text-4xl font-bold text-rose-600 mt-2">N/A</p>
-            </div>
+            <div class="card text-center"><p class="text-sm font-semibold text-gray-500 uppercase">BBAS Títulos Únicos</p><p id="avg-bbas-unique" class="text-4xl font-bold text-teal-600 mt-2">N/A</p></div>
+            <div class="card text-center"><p class="text-sm font-semibold text-gray-500 uppercase">BCOM Títulos Únicos</p><p id="avg-bcom-unique" class="text-4xl font-bold text-sky-600 mt-2">N/A</p></div>
+            <div class="card text-center"><p class="text-sm font-semibold text-gray-500 uppercase">BBAS EBOOKS</p><p id="avg-bbas-ebooks" class="text-4xl font-bold text-indigo-600 mt-2">N/A</p></div>
+            <div class="card text-center"><p class="text-sm font-semibold text-gray-500 uppercase">BCOM EBOOKS</p><p id="avg-bcom-ebooks" class="text-4xl font-bold text-rose-600 mt-2">N/A</p></div>
         </div>
 
-        <!-- Sección de tarjetas de carrera -->
         <div class="card mb-8">
             <h2 class="text-2xl font-semibold text-gray-800 mb-4">Cobertura Porcentual por Carrera</h2>
+            <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mb-6 text-sm text-gray-600 border-t border-b py-3 bg-gray-50 rounded-md">
+                <span class="font-semibold mr-4">Leyenda:</span>
+                <div class="flex items-center"><span class="w-4 h-4 rounded mr-2 percent-high"></span><span>90% o más</span></div>
+                <div class="flex items-center"><span class="w-4 h-4 rounded mr-2 percent-medium-high"></span><span>80% - 89%</span></div>
+                <div class="flex items-center"><span class="w-4 h-4 rounded mr-2 percent-medium"></span><span>70% - 79%</span></div>
+                <div class="flex items-center"><span class="w-4 h-4 rounded mr-2 percent-low"></span><span>Menos de 70%</span></div>
+            </div>
             <div id="career-cards-container" class="career-grid">
                 <p class="col-span-full text-center text-gray-500" id="cards-placeholder">Selecciona una facultad o carrera para ver los datos.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Detalle: Títulos Requeridos vs. Existentes</h2>
+            <div id="comparison-cards-container" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <p class="col-span-full text-center text-gray-500" id="comparison-cards-placeholder">Selecciona una carrera específica para ver el detalle.</p>
             </div>
         </div>
     </div>
 
     <script>
-        // --- DATOS ACTUALIZADOS SEGÚN LA TABLA ---
-        // Se han añadido 4 propiedades para los porcentajes específicos
         const data = [
-             // Fac. Administración y Negocios
-            { faculty: "Fac. Administración y Negocios", career: "INGENIERÍA COMERCIAL", bbas_unique_percent: 97, bcom_unique_percent: 95, bbas_ebooks_percent: 43, bcom_ebooks_percent: 45 },
-            { faculty: "Fac. Administración y Negocios", career: "INGENIERÍA EN ADMINISTRACIÓN", bbas_unique_percent: 90, bcom_unique_percent: 87, bbas_ebooks_percent: 51, bcom_ebooks_percent: 43 },
-            { faculty: "Fac. Administración y Negocios", career: "INGENIERÍA EN CONTROL DE GESTIÓN", bbas_unique_percent: 92, bcom_unique_percent: 87, bbas_ebooks_percent: 52, bcom_ebooks_percent: 38 },
-
-            // Fac. Arquitec. y Construcción
-            { faculty: "Fac. Arquitec. y Construcción", career: "ARQUITECTURA", bbas_unique_percent: 92, bcom_unique_percent: 90, bbas_ebooks_percent: 20, bcom_ebooks_percent: 29 },
-            { faculty: "Fac. Arquitec. y Construcción", career: "INGENIERÍA EN CONSTRUCCIÓN", bbas_unique_percent: 93, bcom_unique_percent: 96, bbas_ebooks_percent: 41, bcom_ebooks_percent: 48 },
-
-            // Fac. Cs de la Salud
-            { faculty: "Fac. Cs de la Salud", career: "ENFERMERÍA", bbas_unique_percent: 98, bcom_unique_percent: 98, bbas_ebooks_percent: 48, bcom_ebooks_percent: 51 },
-            { faculty: "Fac. Cs de la Salud", career: "ODONTOLOGÍA", bbas_unique_percent: 94, bcom_unique_percent: 92, bbas_ebooks_percent: 31, bcom_ebooks_percent: 29 },
-            { faculty: "Fac. Cs de la Salud", career: "FONOAUDIOLOGÍA", bbas_unique_percent: 96, bcom_unique_percent: 92, bbas_ebooks_percent: 12, bcom_ebooks_percent: 11 },
-            { faculty: "Fac. Cs de la Salud", career: "KINESIOLOGÍA", bbas_unique_percent: 98, bcom_unique_percent: 98, bbas_ebooks_percent: 10, bcom_ebooks_percent: 7 },
-            { faculty: "Fac. Cs de la Salud", career: "MEDICINA", bbas_unique_percent: 94, bcom_unique_percent: 88, bbas_ebooks_percent: 36, bcom_ebooks_percent: 33 },
-            { faculty: "Fac. Cs de la Salud", career: "NUTRICIÓN Y DIETÉTICA", bbas_unique_percent: 92, bcom_unique_percent: 94, bbas_ebooks_percent: 8, bcom_ebooks_percent: 6 },
-            { faculty: "Fac. Cs de la Salud", career: "OBSTETRICIA Y PUERICULTURA", bbas_unique_percent: 97, bcom_unique_percent: 97, bbas_ebooks_percent: 9, bcom_ebooks_percent: 10 },
-            { faculty: "Fac. Cs de la Salud", career: "QUÍMICA Y FARMACIA", bbas_unique_percent: 91, bcom_unique_percent: 90, bbas_ebooks_percent: 11, bcom_ebooks_percent: 10 },
-            { faculty: "Fac. Cs de la Salud", career: "TERAPIA OCUPACIONAL", bbas_unique_percent: 94, bcom_unique_percent: 95, bbas_ebooks_percent: 5, bcom_ebooks_percent: 5 },
-
-            // Fac. Cs Sociales y Humanidades
-            { faculty: "Fac. Cs Sociales y Humanidades", career: "PSICOLOGÍA", bbas_unique_percent: 98, bcom_unique_percent: 93, bbas_ebooks_percent: 42, bcom_ebooks_percent: 46 },
-            { faculty: "Fac. Cs Sociales y Humanidades", career: "ADMINISTRACIÓN PÚBLICA", bbas_unique_percent: 90, bcom_unique_percent: 90, bbas_ebooks_percent: 61, bcom_ebooks_percent: 59 },
-            { faculty: "Fac. Cs Sociales y Humanidades", career: "PERIODISMO", bbas_unique_percent: 92, bcom_unique_percent: 87, bbas_ebooks_percent: 37, bcom_ebooks_percent: 46 },
-            { faculty: "Fac. Cs Sociales y Humanidades", career: "PUBLICIDAD PROFESIONAL Y COMUNICACIÓN INTEGRAL", bbas_unique_percent: 92, bcom_unique_percent: 85, bbas_ebooks_percent: 30, bcom_ebooks_percent: 26 },
-            { faculty: "Fac. Cs Sociales y Humanidades", career: "TRABAJO SOCIAL", bbas_unique_percent: 93, bcom_unique_percent: 97, bbas_ebooks_percent: 47, bcom_ebooks_percent: 54 },
-
-            // Fac. Derecho
-            { faculty: "Fac. Derecho", career: "DERECHO", bbas_unique_percent: 97, bcom_unique_percent: 98, bbas_ebooks_percent: 61, bcom_ebooks_percent: 43 },
-
-            // Fac. Educación
-            { faculty: "Fac. Educación", career: "LICENCIATURA EN ARTES VISUALES", bbas_unique_percent: 79, bcom_unique_percent: 88, bbas_ebooks_percent: 20, bcom_ebooks_percent: 26 },
-            { faculty: "Fac. Educación", career: "PEDAGOGÍA EN CASTELLANO", bbas_unique_percent: 90, bcom_unique_percent: 89, bbas_ebooks_percent: 36, bcom_ebooks_percent: 40 },
-            { faculty: "Fac. Educación", career: "PEDAGOGÍA EN EDUCACIÓN BÁSICA", bbas_unique_percent: 86, bcom_unique_percent: 93, bbas_ebooks_percent: 42, bcom_ebooks_percent: 45 },
-            { faculty: "Fac. Educación", career: "PEDAGOGÍA EN EDUCACIÓN DIFERENCIAL", bbas_unique_percent: 88, bcom_unique_percent: 90, bbas_ebooks_percent: 44, bcom_ebooks_percent: 49 },
-            { faculty: "Fac. Educación", career: "PEDAGOGÍA EN EDUCACIÓN FÍSICA", bbas_unique_percent: 94, bcom_unique_percent: 92, bbas_ebooks_percent: 50, bcom_ebooks_percent: 55 },
-            { faculty: "Fac. Educación", career: "PEDAGOGÍA EN HISTORIA, GEOGRAFÍA Y CIENCIAS SOCIALES", bbas_unique_percent: 91, bcom_unique_percent: 90, bbas_ebooks_percent: 35, bcom_ebooks_percent: 42 },
-            { faculty: "Fac. Educación", career: "PEDAGOGÍA EN INGLÉS", bbas_unique_percent: 95, bcom_unique_percent: 95, bbas_ebooks_percent: 31, bcom_ebooks_percent: 31 },
-            { faculty: "Fac. Educación", career: "PEDAGOGÍA EN EDUCACIÓN PARVULARIA", bbas_unique_percent: 95, bcom_unique_percent: 95, bbas_ebooks_percent: 56, bcom_ebooks_percent: 53 },
-
-            // Fac. Ingeniería
-            { faculty: "Fac. Ingeniería", career: "INGENIERÍA CIVIL INDUSTRIAL", bbas_unique_percent: 92, bcom_unique_percent: 94, bbas_ebooks_percent: 43, bcom_ebooks_percent: 46 },
-            { faculty: "Fac. Ingeniería", career: "INGENIERÍA CIVIL INFORMÁTICA", bbas_unique_percent: 95, bcom_unique_percent: 92, bbas_ebooks_percent: 48, bcom_ebooks_percent: 43 },
-            { faculty: "Fac. Ingeniería", career: "INGENIERÍA CIVIL QUÍMICA", bbas_unique_percent: 86, bcom_unique_percent: 86, bbas_ebooks_percent: 38, bcom_ebooks_percent: 34 },
+            // Se añaden los datos de títulos requeridos vs existentes
+            // Facultad de Administración y Negocios
+            { faculty: "Facultad de Administración y Negocios", career: "INGENIERÍA COMERCIAL", bbas_unique_percent: 97, bcom_unique_percent: 95, bbas_ebooks_percent: 43, bcom_ebooks_percent: 45, required_basic: 114, required_bcom: 105, existing_basic: 111, existing_bcom: 100 },
+            { faculty: "Facultad de Administración y Negocios", career: "INGENIERÍA EN ADMINISTRACIÓN", bbas_unique_percent: 90, bcom_unique_percent: 87, bbas_ebooks_percent: 51, bcom_ebooks_percent: 43, required_basic: 81, required_bcom: 63, existing_basic: 73, existing_bcom: 55 },
+            { faculty: "Facultad de Administración y Negocios", career: "INGENIERÍA EN CONTROL DE GESTIÓN", bbas_unique_percent: 92, bcom_unique_percent: 87, bbas_ebooks_percent: 52, bcom_ebooks_percent: 38, required_basic: 117, required_bcom: 147, existing_basic: 108, existing_bcom: 128 },
+            // Facultad de Arquitectura y Construcción
+            { faculty: "Facultad de Arquitectura y Construcción", career: "ARQUITECTURA", bbas_unique_percent: 92, bcom_unique_percent: 90, bbas_ebooks_percent: 20, bcom_ebooks_percent: 29, required_basic: 85, required_bcom: 99, existing_basic: 78, existing_bcom: 89 },
+            { faculty: "Facultad de Arquitectura y Construcción", career: "INGENIERÍA EN CONSTRUCCIÓN", bbas_unique_percent: 93, bcom_unique_percent: 96, bbas_ebooks_percent: 41, bcom_ebooks_percent: 48, required_basic: 101, required_bcom: 98, existing_basic: 94, existing_bcom: 94 },
+            // Facultad de Ciencias de la Salud
+            { faculty: "Facultad de Ciencias de la Salud", career: "ENFERMERÍA", bbas_unique_percent: 98, bcom_unique_percent: 98, bbas_ebooks_percent: 48, bcom_ebooks_percent: 51, required_basic: 99, required_bcom: 107, existing_basic: 97, existing_bcom: 105 },
+            { faculty: "Facultad de Ciencias de la Salud", career: "ODONTOLOGÍA", bbas_unique_percent: 94, bcom_unique_percent: 92, bbas_ebooks_percent: 31, bcom_ebooks_percent: 29, required_basic: 109, required_bcom: 117, existing_basic: 102, existing_bcom: 108 },
+            { faculty: "Facultad de Ciencias de la Salud", career: "FONOAUDIOLOGÍA", bbas_unique_percent: 96, bcom_unique_percent: 92, bbas_ebooks_percent: 12, bcom_ebooks_percent: 11, required_basic: 100, required_bcom: 119, existing_basic: 96, existing_bcom: 109 },
+            { faculty: "Facultad de Ciencias de la Salud", career: "KINESIOLOGÍA", bbas_unique_percent: 98, bcom_unique_percent: 98, bbas_ebooks_percent: 10, bcom_ebooks_percent: 7, required_basic: 104, required_bcom: 114, existing_basic: 102, existing_bcom: 112 },
+            { faculty: "Facultad de Ciencias de la Salud", career: "MEDICINA", bbas_unique_percent: 94, bcom_unique_percent: 88, bbas_ebooks_percent: 36, bcom_ebooks_percent: 33, required_basic: 116, required_bcom: 150, existing_basic: 109, existing_bcom: 132 },
+            { faculty: "Facultad de Ciencias de la Salud", career: "NUTRICIÓN Y DIETÉTICA", bbas_unique_percent: 92, bcom_unique_percent: 94, bbas_ebooks_percent: 8, bcom_ebooks_percent: 6, required_basic: 103, required_bcom: 139, existing_basic: 95, existing_bcom: 131 },
+            { faculty: "Facultad de Ciencias de la Salud", career: "OBSTETRICIA Y PUERICULTURA", bbas_unique_percent: 97, bcom_unique_percent: 97, bbas_ebooks_percent: 9, bcom_ebooks_percent: 10, required_basic: 88, required_bcom: 92, existing_basic: 85, existing_bcom: 89 },
+            { faculty: "Facultad de Ciencias de la Salud", career: "QUÍMICA Y FARMACIA", bbas_unique_percent: 91, bcom_unique_percent: 90, bbas_ebooks_percent: 11, bcom_ebooks_percent: 10, required_basic: 90, required_bcom: 99, existing_basic: 82, existing_bcom: 89 },
+            { faculty: "Facultad de Ciencias de la Salud", career: "TERAPIA OCUPACIONAL", bbas_unique_percent: 94, bcom_unique_percent: 95, bbas_ebooks_percent: 5, bcom_ebooks_percent: 5, required_basic: 112, required_bcom: 132, existing_basic: 105, existing_bcom: 126 },
+            // Facultad de Ciencias Sociales y Humanidades
+            { faculty: "Facultad de Ciencias Sociales y Humanidades", career: "PSICOLOGÍA", bbas_unique_percent: 98, bcom_unique_percent: 93, bbas_ebooks_percent: 42, bcom_ebooks_percent: 46, required_basic: 131, required_bcom: 177, existing_basic: 128, existing_bcom: 165 },
+            { faculty: "Facultad de Ciencias Sociales y Humanidades", career: "ADMINISTRACIÓN PÚBLICA", bbas_unique_percent: 90, bcom_unique_percent: 90, bbas_ebooks_percent: 61, bcom_ebooks_percent: 59, required_basic: 137, required_bcom: 219, existing_basic: 129, existing_bcom: 197 },
+            { faculty: "Facultad de Ciencias Sociales y Humanidades", career: "PERIODISMO", bbas_unique_percent: 92, bcom_unique_percent: 87, bbas_ebooks_percent: 37, bcom_ebooks_percent: 46, required_basic: 136, required_bcom: 140, existing_basic: 125, existing_bcom: 122 },
+            { faculty: "Facultad de Ciencias Sociales y Humanidades", career: "PUBLICIDAD PROFESIONAL Y COMUNICACIÓN INTEGRAL", bbas_unique_percent: 92, bcom_unique_percent: 85, bbas_ebooks_percent: 30, bcom_ebooks_percent: 26, required_basic: 99, required_bcom: 137, existing_basic: 91, existing_bcom: 116 },
+            { faculty: "Facultad de Ciencias Sociales y Humanidades", career: "TRABAJO SOCIAL", bbas_unique_percent: 93, bcom_unique_percent: 97, bbas_ebooks_percent: 47, bcom_ebooks_percent: 54, required_basic: 113, required_bcom: 159, existing_basic: 105, existing_bcom: 154 },
+            // Facultad de Derecho
+            { faculty: "Facultad de Derecho", career: "DERECHO", bbas_unique_percent: 97, bcom_unique_percent: 98, bbas_ebooks_percent: 61, bcom_ebooks_percent: 43, required_basic: 113, required_bcom: 126, existing_basic: 110, existing_bcom: 123 },
+            // Facultad de Educación
+            { faculty: "Facultad de Educación", career: "LICENCIATURA EN ARTES VISUALES", bbas_unique_percent: 79, bcom_unique_percent: 88, bbas_ebooks_percent: 20, bcom_ebooks_percent: 26, required_basic: 92, required_bcom: 103, existing_basic: 73, existing_bcom: 91 },
+            { faculty: "Facultad de Educación", career: "PEDAGOGÍA EN CASTELLANO", bbas_unique_percent: 90, bcom_unique_percent: 89, bbas_ebooks_percent: 36, bcom_ebooks_percent: 40, required_basic: 127, required_bcom: 178, existing_basic: 114, existing_bcom: 158 },
+            { faculty: "Facultad de Educación", career: "PEDAGOGÍA EN EDUCACIÓN BÁSICA", bbas_unique_percent: 86, bcom_unique_percent: 93, bbas_ebooks_percent: 42, bcom_ebooks_percent: 45, required_basic: 121, required_bcom: 162, existing_basic: 104, existing_bcom: 151 },
+            { faculty: "Facultad de Educación", career: "PEDAGOGÍA EN EDUCACIÓN DIFERENCIAL", bbas_unique_percent: 88, bcom_unique_percent: 90, bbas_ebooks_percent: 44, bcom_ebooks_percent: 49, required_basic: 112, required_bcom: 155, existing_basic: 99, existing_bcom: 139 },
+            { faculty: "Facultad de Educación", career: "PEDAGOGÍA EN EDUCACIÓN FÍSICA", bbas_unique_percent: 94, bcom_unique_percent: 92, bbas_ebooks_percent: 50, bcom_ebooks_percent: 55, required_basic: 119, required_bcom: 131, existing_basic: 112, existing_bcom: 121 },
+            { faculty: "Facultad de Educación", career: "PEDAGOGÍA EN HISTORIA, GEOGRAFÍA Y CIENCIAS SOCIALES", bbas_unique_percent: 91, bcom_unique_percent: 90, bbas_ebooks_percent: 35, bcom_ebooks_percent: 42, required_basic: 123, required_bcom: 178, existing_basic: 112, existing_bcom: 161 },
+            { faculty: "Facultad de Educación", career: "PEDAGOGÍA EN INGLÉS", bbas_unique_percent: 95, bcom_unique_percent: 95, bbas_ebooks_percent: 31, bcom_ebooks_percent: 31, required_basic: 106, required_bcom: 127, existing_basic: 101, existing_bcom: 121 },
+            { faculty: "Facultad de Educación", career: "PEDAGOGÍA EN EDUCACIÓN PARVULARIA", bbas_unique_percent: 95, bcom_unique_percent: 95, bbas_ebooks_percent: 56, bcom_ebooks_percent: 53, required_basic: 102, required_bcom: 114, existing_basic: 97, existing_bcom: 108 },
+            // Facultad de Ingeniería
+            { faculty: "Facultad de Ingeniería", career: "INGENIERÍA CIVIL INDUSTRIAL", bbas_unique_percent: 92, bcom_unique_percent: 94, bbas_ebooks_percent: 43, bcom_ebooks_percent: 46, required_basic: 127, required_bcom: 131, existing_basic: 117, existing_bcom: 123 },
+            { faculty: "Facultad de Ingeniería", career: "INGENIERÍA CIVIL INFORMÁTICA", bbas_unique_percent: 95, bcom_unique_percent: 92, bbas_ebooks_percent: 48, bcom_ebooks_percent: 43, required_basic: 133, required_bcom: 144, existing_basic: 126, existing_bcom: 133 },
+            { faculty: "Facultad de Ingeniería", career: "INGENIERÍA CIVIL QUÍMICA", bbas_unique_percent: 86, bcom_unique_percent: 86, bbas_ebooks_percent: 38, bcom_ebooks_percent: 34, required_basic: 112, required_bcom: 126, existing_basic: 89, existing_bcom: 96 },
         ];
-
 
         data.sort((a, b) => a.faculty.localeCompare(b.faculty) || a.career.localeCompare(b.career));
 
@@ -192,6 +194,9 @@
         const avgBcomEbooksEl = document.getElementById('avg-bcom-ebooks');
         const careerCardsContainer = document.getElementById('career-cards-container');
         const cardsPlaceholder = document.getElementById('cards-placeholder');
+        
+        const comparisonCardsContainer = document.getElementById('comparison-cards-container');
+        const comparisonCardsPlaceholder = document.getElementById('comparison-cards-placeholder');
 
         function initializeFilters() {
             const faculties = [...new Set(data.map(item => item.faculty))].sort();
@@ -227,6 +232,7 @@
             );
             updateKPIs(filteredData);
             updateCareerCards(filteredData);
+            updateComparisonCards(filteredData); // Actualizar nueva sección
         }
 
         function calculateAverage(data, key) {
@@ -263,43 +269,51 @@
             currentData.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'card flex flex-col justify-between';
-                
                 const formatPercent = (p) => (typeof p === 'number' ? `${p}%` : 'N/A');
-
                 card.innerHTML = `
-                    <div>
-                        <p class="text-sm font-semibold text-gray-500 mb-1">${item.faculty}</p>
-                        <p class="text-xl font-bold text-gray-900 mb-4">${item.career}</p>
-                    </div>
+                    <div><p class="text-sm font-semibold text-gray-500 mb-1">${item.faculty}</p><p class="text-xl font-bold text-gray-900 mb-4">${item.career}</p></div>
                     <div class="grid grid-cols-2 gap-3">
-                        <div class="percent-cell ${getHeatmapColorClass(item.bbas_unique_percent)}">
-                            <p class="text-xs">BBAS T. Únicos</p>
-                            <p class="text-lg font-bold">${formatPercent(item.bbas_unique_percent)}</p>
-                        </div>
-                        <div class="percent-cell ${getHeatmapColorClass(item.bcom_unique_percent)}">
-                            <p class="text-xs">BCOM T. Únicos</p>
-                            <p class="text-lg font-bold">${formatPercent(item.bcom_unique_percent)}</p>
-                        </div>
-                        <div class="percent-cell ${getHeatmapColorClass(item.bbas_ebooks_percent)}">
-                            <p class="text-xs">BBAS Ebooks</p>
-                            <p class="text-lg font-bold">${formatPercent(item.bbas_ebooks_percent)}</p>
-                        </div>
-                        <div class="percent-cell ${getHeatmapColorClass(item.bcom_ebooks_percent)}">
-                            <p class="text-xs">BCOM Ebooks</p>
-                            <p class="text-lg font-bold">${formatPercent(item.bcom_ebooks_percent)}</p>
-                        </div>
-                    </div>
-                `;
+                        <div class="percent-cell ${getHeatmapColorClass(item.bbas_unique_percent)}"><p class="text-xs">BBAS T. Únicos</p><p class="text-lg font-bold">${formatPercent(item.bbas_unique_percent)}</p></div>
+                        <div class="percent-cell ${getHeatmapColorClass(item.bcom_unique_percent)}"><p class="text-xs">BCOM T. Únicos</p><p class="text-lg font-bold">${formatPercent(item.bcom_unique_percent)}</p></div>
+                        <div class="percent-cell ${getHeatmapColorClass(item.bbas_ebooks_percent)}"><p class="text-xs">BBAS Ebooks</p><p class="text-lg font-bold">${formatPercent(item.bbas_ebooks_percent)}</p></div>
+                        <div class="percent-cell ${getHeatmapColorClass(item.bcom_ebooks_percent)}"><p class="text-xs">BCOM Ebooks</p><p class="text-lg font-bold">${formatPercent(item.bcom_ebooks_percent)}</p></div>
+                    </div>`;
                 careerCardsContainer.appendChild(card);
             });
+        }
+        
+        function updateComparisonCards(currentData) {
+            comparisonCardsContainer.innerHTML = '';
+            if (currentData.length === 1) {
+                const careerData = currentData[0];
+                comparisonCardsPlaceholder.classList.add('hidden');
+                const createComparisonCard = (title, existing, required) => {
+                    const coverage = (required > 0) ? (existing / required) * 100 : 0;
+                    const card = document.createElement('div');
+                    card.className = 'p-4 border rounded-lg bg-gray-50';
+                    card.innerHTML = `
+                        <h3 class="font-bold text-lg text-gray-700">${title}</h3>
+                        <p class="text-gray-600 mt-2">Existentes: <span class="font-bold">${existing}</span> de <span class="font-bold">${required}</span> Requeridos</p>
+                        <div class="flex items-center mt-3">
+                            <div class="w-full progress-bar-bg">
+                                <div class="progress-bar-fill ${getHeatmapColorClass(coverage)}" style="width: ${coverage.toFixed(2)}%;">${coverage.toFixed(1)}%</div>
+                            </div>
+                        </div>`;
+                    return card;
+                };
+                const basicCard = createComparisonCard('Bibliografía Básica', careerData.existing_basic, careerData.required_basic);
+                const bcomCard = createComparisonCard('Bibliografía BCOM', careerData.existing_bcom, careerData.required_bcom);
+                comparisonCardsContainer.appendChild(basicCard);
+                comparisonCardsContainer.appendChild(bcomCard);
+            } else {
+                comparisonCardsContainer.appendChild(comparisonCardsPlaceholder);
+                comparisonCardsPlaceholder.classList.remove('hidden');
+            }
         }
 
         facultyFilter.addEventListener('change', updateCareerFilter);
         careerFilter.addEventListener('change', updateVisualizations);
-
-        window.onload = () => {
-            initializeFilters();
-        };
+        window.onload = () => { initializeFilters(); };
     </script>
 </body>
 </html>
