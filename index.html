@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Carga de Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
@@ -170,40 +173,24 @@
             </div>
         </div>
 
-        <!-- NUEVA SECCIÓN PARA CARRERAS EN REDISEÑO -->
         <div class="card">
             <h2 class="text-2xl font-semibold text-gray-800 mb-4">Carreras en Rediseño</h2>
-            <div id="redesign-career-container" class="space-y-6">
-                <!-- Tarjeta para Derecho (Rediseño) -->
-                <div class="card border-l-4 border-blue-500">
-                    <p class="text-sm font-semibold text-gray-500 mb-1 text-center">Facultad de Derecho</p>
-                    <p class="text-xl font-bold text-gray-900 mb-4 text-center">DERECHO (Rediseño)</p>
-                    
-                    <div class="grid grid-cols-2 gap-3 mb-6">
-                        <div class="percent-cell bg-green-600"><p class="text-[11px] leading-tight font-semibold">BBAS<br>Títulos únicos</p><p class="text-lg font-bold">97%</p></div>
-                        <div class="percent-cell bg-green-600"><p class="text-[11px] leading-tight font-semibold">BCOM<br>Títulos únicos</p><p class="text-lg font-bold">98%</p></div>
-                        <div class="percent-cell bg-yellow-500"><p class="text-[11px] leading-tight font-semibold">BBAS<br>Formato electrónico</p><p class="text-lg font-bold">47%</p></div>
-                        <div class="percent-cell bg-yellow-500"><p class="text-[11px] leading-tight font-semibold">BCOM<br>Formato electrónico</p><p class="text-lg font-bold">65%</p></div>
-                    </div>
-
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <div class="p-4 border rounded-lg bg-gray-50 flex flex-col">
-                            <h3 class="font-bold text-lg text-gray-700">Bibliografía Básica</h3>
-                            <p class="text-gray-600 mt-2">Existentes: <span class="font-bold">113</span> de <span class="font-bold">117</span> Requeridos</p>
-                            <div class="flex items-center mt-3">
-                                <div class="w-full progress-bar-bg"><div class="progress-bar-fill percent-high" style="width: 96.58%;">96.6%</div></div>
-                            </div>
-                        </div>
-                        <div class="p-4 border rounded-lg bg-gray-50 flex flex-col">
-                            <h3 class="font-bold text-lg text-gray-700">Bibliografía Complementaria</h3>
-                            <p class="text-gray-600 mt-2">Existentes: <span class="font-bold">121</span> de <span class="font-bold">124</span> Requeridos</p>
-                            <div class="flex items-center mt-3">
-                                <div class="w-full progress-bar-bg"><div class="progress-bar-fill percent-high" style="width: 97.58%;">97.6%</div></div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="card bg-gray-50">
+                    <label for="redesign-faculty-filter" class="block text-lg font-medium mb-2">Filtrar por Facultad:</label>
+                    <select id="redesign-faculty-filter" class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-md">
+                        <option value="all">Todas las Facultades</option>
+                    </select>
                 </div>
-                <!-- Aquí se pueden añadir más tarjetas para otras carreras en rediseño -->
+                <div class="card bg-gray-50">
+                    <label for="redesign-career-filter" class="block text-lg font-medium mb-2">Filtrar por Carrera:</label>
+                    <select id="redesign-career-filter" class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-md">
+                        <option value="all">Todas las Carreras</option>
+                    </select>
+                </div>
+            </div>
+            <div id="redesign-career-container" class="space-y-6">
+                <p class="col-span-full text-center text-gray-500" id="redesign-placeholder">Selecciona una facultad o carrera para ver los datos.</p>
             </div>
         </div>
     </div>
@@ -272,147 +259,240 @@
             { faculty: "Facultad de Ingeniería", career: "INGENIERÍA CIVIL QUÍMICA", bbas_unique_percent: 86, bcom_unique_percent: 86, bbas_ebooks_percent: 38, bcom_ebooks_percent: 34, required_basic: 103, required_bcom: 112, existing_basic: 89, existing_bcom: 96 },
         ];
 
+        const redesignData = [
+            {
+                faculty: "Facultad de Derecho", 
+                career: "DERECHO (Rediseño)", 
+                bbas_unique_percent: 97, 
+                bcom_unique_percent: 98, 
+                bbas_ebooks_percent: 47, 
+                bcom_ebooks_percent: 65, 
+                required_basic: 117, 
+                required_bcom: 124, 
+                existing_basic: 113, 
+                existing_bcom: 121
+            }
+        ];
+
         data.sort((a, b) => a.faculty.localeCompare(b.faculty) || a.career.localeCompare(b.career));
 
-        const facultyFilter = document.getElementById('faculty-filter');
-        const careerFilter = document.getElementById('career-filter');
-        const avgBbasUniqueEl = document.getElementById('avg-bbas-unique');
-        const avgBcomUniqueEl = document.getElementById('avg-bcom-unique');
-        const avgBbasEbooksEl = document.getElementById('avg-bbas-ebooks');
-        const avgBcomEbooksEl = document.getElementById('avg-bcom-ebooks');
-        const careerCardsContainer = document.getElementById('career-cards-container');
-        const cardsPlaceholder = document.getElementById('cards-placeholder');
-        
-        const comparisonCardsContainer = document.getElementById('comparison-cards-container');
-        const comparisonCardsPlaceholder = document.getElementById('comparison-cards-placeholder');
+        window.onload = () => {
+            const facultyFilter = document.getElementById('faculty-filter');
+            const careerFilter = document.getElementById('career-filter');
+            const avgBbasUniqueEl = document.getElementById('avg-bbas-unique');
+            const avgBcomUniqueEl = document.getElementById('avg-bcom-unique');
+            const avgBbasEbooksEl = document.getElementById('avg-bbas-ebooks');
+            const avgBcomEbooksEl = document.getElementById('avg-bcom-ebooks');
+            const careerCardsContainer = document.getElementById('career-cards-container');
+            const cardsPlaceholder = document.getElementById('cards-placeholder');
+            
+            const comparisonCardsContainer = document.getElementById('comparison-cards-container');
+            const comparisonCardsPlaceholder = document.getElementById('comparison-cards-placeholder');
 
-        function initializeFilters() {
-            const faculties = [...new Set(data.map(item => item.faculty))].sort();
-            faculties.forEach(faculty => {
-                const option = document.createElement('option');
-                option.value = faculty;
-                option.textContent = faculty;
-                facultyFilter.appendChild(option);
-            });
-            updateCareerFilter();
-        }
+            const redesignFacultyFilter = document.getElementById('redesign-faculty-filter');
+            const redesignCareerFilter = document.getElementById('redesign-career-filter');
+            const redesignContainer = document.getElementById('redesign-career-container');
 
-        function updateCareerFilter() {
-            const selectedFaculty = facultyFilter.value;
-            careerFilter.innerHTML = '<option value="all">Todas las Carreras</option>';
-            const filteredCareers = selectedFaculty === 'all' ? data : data.filter(item => item.faculty === selectedFaculty);
-            const careers = [...new Set(filteredCareers.map(item => item.career))].sort();
-            careers.forEach(career => {
-                const option = document.createElement('option');
-                option.value = career;
-                option.textContent = career;
-                careerFilter.appendChild(option);
-            });
-            updateVisualizations();
-        }
 
-        function updateVisualizations() {
-            const selectedFaculty = facultyFilter.value;
-            const selectedCareer = careerFilter.value;
-            const filteredData = data.filter(item => 
-                (selectedFaculty === 'all' || item.faculty === selectedFaculty) &&
-                (selectedCareer === 'all' || item.career === selectedCareer)
-            );
-            updateKPIs(filteredData);
-            updateCareerCards(filteredData);
-            updateComparisonCards(filteredData);
-        }
-
-        function calculateAverage(data, key) {
-            const validItems = data.filter(item => typeof item[key] === 'number' && !isNaN(item[key]));
-            if (validItems.length === 0) return 'N/A';
-            const total = validItems.reduce((sum, item) => sum + item[key], 0);
-            return `${(total / validItems.length).toFixed(1)}%`;
-        }
-        
-        function updateKPIs(currentData) {
-            avgBbasUniqueEl.textContent = calculateAverage(currentData, 'bbas_unique_percent');
-            avgBcomUniqueEl.textContent = calculateAverage(currentData, 'bcom_unique_percent');
-            avgBbasEbooksEl.textContent = calculateAverage(currentData, 'bbas_ebooks_percent');
-            avgBcomEbooksEl.textContent = calculateAverage(currentData, 'bcom_ebooks_percent');
-        }
-
-        function getHeatmapColorClass(percentage) {
-            if (typeof percentage !== 'number' || isNaN(percentage)) return 'percent-unavailable';
-            if (percentage >= 90) return 'percent-high';
-            if (percentage >= 80) return 'percent-medium-high';
-            if (percentage >= 70) return 'percent-medium';
-            return 'percent-low';
-        }
-
-        function updateCareerCards(currentData) {
-            careerCardsContainer.innerHTML = '';
-            if (currentData.length === 0) {
-                careerCardsContainer.appendChild(cardsPlaceholder);
-                cardsPlaceholder.classList.remove('hidden');
-                return;
+            function initializeFilters(filterElement, data, careerFilterElement) {
+                if (!filterElement) return;
+                const faculties = [...new Set(data.map(item => item.faculty))].sort();
+                faculties.forEach(faculty => {
+                    const option = document.createElement('option');
+                    option.value = faculty;
+                    option.textContent = faculty;
+                    filterElement.appendChild(option);
+                });
+                 if(careerFilterElement){
+                    updateCareerFilter(filterElement, careerFilterElement, data);
+                }
             }
-            cardsPlaceholder.classList.add('hidden');
+            
+            function updateCareerFilter(facultyFilter, careerFilter, sourceData) {
+                const selectedFaculty = facultyFilter.value;
+                careerFilter.innerHTML = '<option value="all">Todas las Carreras</option>';
+                
+                const careersToShow = (selectedFaculty === 'all') 
+                    ? sourceData 
+                    : sourceData.filter(item => item.faculty === selectedFaculty);
+                
+                const uniqueCareers = [...new Set(careersToShow.map(item => item.career))].sort();
 
-            currentData.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'card flex flex-col justify-between';
-                const formatPercent = (p) => (typeof p === 'number' ? `${p}%` : 'N/A');
-                card.innerHTML = `
-                    <div><p class="text-sm font-semibold text-gray-500 mb-1 text-center">${item.faculty}</p><p class="text-xl font-bold text-gray-900 mb-4 text-center">${item.career}</p></div>
-                    <div class="grid grid-cols-2 gap-3">
-                        <div class="percent-cell ${getHeatmapColorClass(item.bbas_unique_percent)}"><p class="text-[11px] leading-tight font-semibold">BBAS<br>Títulos únicos</p><p class="text-lg font-bold">${formatPercent(item.bbas_unique_percent)}</p></div>
-                        <div class="percent-cell ${getHeatmapColorClass(item.bcom_unique_percent)}"><p class="text-[11px] leading-tight font-semibold">BCOM<br>Títulos únicos</p><p class="text-lg font-bold">${formatPercent(item.bcom_unique_percent)}</p></div>
-                        <div class="percent-cell ${getHeatmapColorClass(item.bbas_ebooks_percent)}"><p class="text-[11px] leading-tight font-semibold">BBAS<br>Formato electrónico</p><p class="text-lg font-bold">${formatPercent(item.bbas_ebooks_percent)}</p></div>
-                        <div class="percent-cell ${getHeatmapColorClass(item.bcom_ebooks_percent)}"><p class="text-[11px] leading-tight font-semibold">BCOM<br>Formato electrónico</p><p class="text-lg font-bold">${formatPercent(item.bcom_ebooks_percent)}</p></div>
-                    </div>`;
-                careerCardsContainer.appendChild(card);
-            });
-        }
-        
-        function updateComparisonCards(currentData) {
-            comparisonCardsContainer.innerHTML = '';
-            if (currentData.length === 1) {
-                const careerData = currentData[0];
-                comparisonCardsPlaceholder.classList.add('hidden');
-                const createComparisonCard = (title, existing, required, missingTitles) => {
-                    const coverage = (required > 0) ? (existing / required) * 100 : 0;
+                uniqueCareers.forEach(career => {
+                    const option = document.createElement('option');
+                    option.value = career;
+                    option.textContent = career;
+                    careerFilter.appendChild(option);
+                });
+            }
+
+
+            function updateVisualizations() {
+                const selectedFaculty = facultyFilter.value;
+                const selectedCareer = careerFilter.value;
+                const filteredData = data.filter(item => 
+                    (selectedFaculty === 'all' || item.faculty === selectedFaculty) &&
+                    (selectedCareer === 'all' || item.career === selectedCareer)
+                );
+                updateKPIs(filteredData);
+                updateCareerCards(filteredData);
+                updateComparisonCards(filteredData);
+            }
+
+            function calculateAverage(data, key) {
+                const validItems = data.filter(item => typeof item[key] === 'number' && !isNaN(item[key]));
+                if (validItems.length === 0) return 'N/A';
+                const total = validItems.reduce((sum, item) => sum + item[key], 0);
+                return `${(total / validItems.length).toFixed(1)}%`;
+            }
+            
+            function updateKPIs(currentData) {
+                avgBbasUniqueEl.textContent = calculateAverage(currentData, 'bbas_unique_percent');
+                avgBcomUniqueEl.textContent = calculateAverage(currentData, 'bcom_unique_percent');
+                avgBbasEbooksEl.textContent = calculateAverage(currentData, 'bbas_ebooks_percent');
+                avgBcomEbooksEl.textContent = calculateAverage(currentData, 'bcom_ebooks_percent');
+            }
+
+            function getHeatmapColorClass(percentage) {
+                if (typeof percentage !== 'number' || isNaN(percentage)) return 'percent-unavailable';
+                if (percentage >= 90) return 'percent-high';
+                if (percentage >= 80) return 'percent-medium-high';
+                if (percentage >= 70) return 'percent-medium';
+                return 'percent-low';
+            }
+
+            function updateCareerCards(currentData) {
+                careerCardsContainer.innerHTML = '';
+                if (currentData.length === 0) {
+                    careerCardsContainer.appendChild(cardsPlaceholder);
+                    cardsPlaceholder.classList.remove('hidden');
+                    return;
+                }
+                cardsPlaceholder.classList.add('hidden');
+
+                currentData.forEach(item => {
                     const card = document.createElement('div');
-                    card.className = 'p-4 border rounded-lg bg-gray-50 flex flex-col';
-                    let missingTitlesHtml = '';
-                    if (missingTitles && missingTitles.length > 0) {
-                        const listItems = missingTitles.map(t => `<li class="border-b py-2"><span class="block font-semibold text-sm text-gray-600">${t.asignatura}</span><span class="font-semibold">${t.title}</span><br><span class="text-xs italic">${t.author || 'Autor no especificado'}</span><br><span class="text-xs text-red-600">${t.reason}</span></li>`).join('');
-                        missingTitlesHtml = `
-                            <details class="mt-4"><summary class="text-sm font-semibold text-blue-600 hover:underline">Ver Títulos Faltantes (${missingTitles.length})</summary>
-                                <ul class="list-none mt-2 pl-2 text-sm text-gray-700 bg-white p-2 rounded max-h-48 overflow-y-auto border">
-                                    ${listItems}
-                                </ul>
-                            </details>`;
-                    }
+                    card.className = 'card flex flex-col justify-between';
+                    const formatPercent = (p) => (typeof p === 'number' ? `${p}%` : 'N/A');
                     card.innerHTML = `
-                        <div>
-                            <h3 class="font-bold text-lg text-gray-700">${title}</h3>
-                            <p class="text-gray-600 mt-2">Existentes: <span class="font-bold">${existing}</span> de <span class="font-bold">${required}</span> Requeridos</p>
-                            <div class="flex items-center mt-3">
-                                <div class="w-full progress-bar-bg"><div class="progress-bar-fill ${getHeatmapColorClass(coverage)}" style="width: ${coverage.toFixed(2)}%;">${coverage.toFixed(1)}%</div></div>
+                        <div class="text-center"><p class="text-sm font-semibold text-gray-500 mb-1">${item.faculty}</p><p class="text-xl font-bold text-gray-900 mb-4">${item.career}</p></div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="percent-cell ${getHeatmapColorClass(item.bbas_unique_percent)}"><p class="text-xs font-semibold">BBAS T. Únicos</p><p class="text-lg font-bold">${formatPercent(item.bbas_unique_percent)}</p></div>
+                            <div class="percent-cell ${getHeatmapColorClass(item.bcom_unique_percent)}"><p class="text-xs font-semibold">BCOM T. Únicos</p><p class="text-lg font-bold">${formatPercent(item.bcom_unique_percent)}</p></div>
+                            <div class="percent-cell ${getHeatmapColorClass(item.bbas_ebooks_percent)}"><p class="text-xs font-semibold">BBAS E-Books</p><p class="text-lg font-bold">${formatPercent(item.bbas_ebooks_percent)}</p></div>
+                            <div class="percent-cell ${getHeatmapColorClass(item.bcom_ebooks_percent)}"><p class="text-xs font-semibold">BCOM E-Books</p><p class="text-lg font-bold">${formatPercent(item.bcom_ebooks_percent)}</p></div>
+                        </div>`;
+                    careerCardsContainer.appendChild(card);
+                });
+            }
+            
+            function updateComparisonCards(currentData) {
+                comparisonCardsContainer.innerHTML = '';
+                if (currentData.length === 1) {
+                    const careerData = currentData[0];
+                    comparisonCardsPlaceholder.classList.add('hidden');
+                    const createComparisonCard = (title, existing, required, missingTitles) => {
+                        const coverage = (required > 0) ? (existing / required) * 100 : 0;
+                        const card = document.createElement('div');
+                        card.className = 'p-4 border rounded-lg bg-gray-50 flex flex-col';
+                        let missingTitlesHtml = '';
+                        if (missingTitles && missingTitles.length > 0) {
+                            const listItems = missingTitles.map(t => `<li class="border-b py-2"><span class="block font-semibold text-sm text-gray-600">${t.asignatura}</span><span class="font-semibold">${t.title}</span><br><span class="text-xs italic">${t.author || 'Autor no especificado'}</span><br><span class="text-xs text-red-600">${t.reason}</span></li>`).join('');
+                            missingTitlesHtml = `
+                                <details class="mt-4"><summary class="text-sm font-semibold text-blue-600 hover:underline">Ver Títulos Faltantes (${missingTitles.length})</summary>
+                                    <ul class="list-none mt-2 pl-2 text-sm text-gray-700 bg-white p-2 rounded max-h-48 overflow-y-auto border">
+                                        ${listItems}
+                                    </ul>
+                                </details>`;
+                        }
+                        card.innerHTML = `
+                            <div>
+                                <h3 class="font-bold text-lg text-gray-700">${title}</h3>
+                                <p class="text-gray-600 mt-2">Existentes: <span class="font-bold">${existing}</span> de <span class="font-bold">${required}</span> Requeridos</p>
+                                <div class="flex items-center mt-3">
+                                    <div class="w-full progress-bar-bg"><div class="progress-bar-fill ${getHeatmapColorClass(coverage)}" style="width: ${coverage.toFixed(2)}%;">${coverage.toFixed(1)}%</div></div>
+                                </div>
+                            </div>
+                            <div class="mt-auto pt-2">${missingTitlesHtml}</div>`;
+                        return card;
+                    };
+                    const basicCard = createComparisonCard('Bibliografía Básica', careerData.existing_basic, careerData.required_basic, careerData.missing_basic_titles);
+                    const bcomCard = createComparisonCard('Bibliografía Complementaria', careerData.existing_bcom, careerData.required_bcom, careerData.missing_bcom_titles);
+                    comparisonCardsContainer.appendChild(basicCard);
+                    comparisonCardsContainer.appendChild(bcomCard);
+                } else {
+                    comparisonCardsContainer.appendChild(comparisonCardsPlaceholder);
+                    comparisonCardsPlaceholder.classList.remove('hidden');
+                }
+            }
+
+            function updateRedesignVisualizations() {
+                redesignContainer.innerHTML = '';
+                const selectedFaculty = redesignFacultyFilter.value;
+                const selectedCareer = redesignCareerFilter.value;
+
+                const filteredData = redesignData.filter(item => 
+                    (selectedFaculty === 'all' || item.faculty === selectedFaculty) &&
+                    (selectedCareer === 'all' || item.career === selectedCareer)
+                );
+
+                if(filteredData.length === 0){
+                    redesignContainer.innerHTML = `<p class="text-center text-gray-500">No hay datos para la selección actual.</p>`;
+                    return;
+                }
+
+                filteredData.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'card border-l-4 border-blue-500';
+                    card.innerHTML = `
+                        <p class="text-sm font-semibold text-gray-500 mb-1 text-center">${item.faculty}</p>
+                        <p class="text-xl font-bold text-gray-900 mb-4 text-center">${item.career}</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="percent-cell ${getHeatmapColorClass(item.bbas_unique_percent)}"><p class="text-[11px] leading-tight font-semibold">BBAS<br>Títulos únicos</p><p class="text-lg font-bold">${item.bbas_unique_percent}%</p></div>
+                            <div class="percent-cell ${getHeatmapColorClass(item.bcom_unique_percent)}"><p class="text-[11px] leading-tight font-semibold">BCOM<br>Títulos únicos</p><p class="text-lg font-bold">${item.bcom_unique_percent}%</p></div>
+                            <div class="percent-cell ${getHeatmapColorClass(item.bbas_ebooks_percent)}"><p class="text-[11px] leading-tight font-semibold">BBAS<br>Formato electrónico</p><p class="text-lg font-bold">${item.bbas_ebooks_percent}%</p></div>
+                            <div class="percent-cell ${getHeatmapColorClass(item.bcom_ebooks_percent)}"><p class="text-[11px] leading-tight font-semibold">BCOM<br>Formato electrónico</p><p class="text-lg font-bold">${item.bcom_ebooks_percent}%</p></div>
+                        </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div class="p-4 border rounded-lg bg-gray-50 flex flex-col">
+                                <h3 class="font-bold text-lg text-gray-700">Bibliografía Básica</h3>
+                                <p class="text-gray-600 mt-2">Existentes: <span class="font-bold">${item.existing_basic}</span> de <span class="font-bold">${item.required_basic}</span> Requeridos</p>
+                                <div class="flex items-center mt-3">
+                                    <div class="w-full progress-bar-bg"><div class="progress-bar-fill ${getHeatmapColorClass(item.bbas_unique_percent)}" style="width: ${item.bbas_unique_percent}%;">${item.bbas_unique_percent}%</div></div>
+                                </div>
+                            </div>
+                            <div class="p-4 border rounded-lg bg-gray-50 flex flex-col">
+                                <h3 class="font-bold text-lg text-gray-700">Bibliografía Complementaria</h3>
+                                <p class="text-gray-600 mt-2">Existentes: <span class="font-bold">${item.existing_bcom}</span> de <span class="font-bold">${item.required_bcom}</span> Requeridos</p>
+                                <div class="flex items-center mt-3">
+                                    <div class="w-full progress-bar-bg"><div class="progress-bar-fill ${getHeatmapColorClass(item.bcom_unique_percent)}" style="width: ${item.bcom_unique_percent}%;">${item.bcom_unique_percent}%</div></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="mt-auto pt-2">${missingTitlesHtml}</div>`;
-                    return card;
-                };
-                const basicCard = createComparisonCard('Bibliografía Básica', careerData.existing_basic, careerData.required_basic, careerData.missing_basic_titles);
-                const bcomCard = createComparisonCard('Bibliografía Complementaria', careerData.existing_bcom, careerData.required_bcom, careerData.missing_bcom_titles);
-                comparisonCardsContainer.appendChild(basicCard);
-                comparisonCardsContainer.appendChild(bcomCard);
-            } else {
-                comparisonCardsContainer.appendChild(comparisonCardsPlaceholder);
-                comparisonCardsPlaceholder.classList.remove('hidden');
+                    `;
+                    redesignContainer.appendChild(card);
+                });
             }
-        }
 
-        facultyFilter.addEventListener('change', updateCareerFilter);
-        careerFilter.addEventListener('change', updateVisualizations);
-        window.onload = () => { initializeFilters(); };
+            // Event listeners
+            if (facultyFilter) facultyFilter.addEventListener('change', () => {
+                updateCareerFilter(facultyFilter, careerFilter, data);
+                updateVisualizations();
+            });
+            if (careerFilter) careerFilter.addEventListener('change', updateVisualizations);
+            
+            if (redesignFacultyFilter && redesignCareerFilter) {
+                redesignFacultyFilter.addEventListener('change', () => updateCareerFilter(redesignFacultyFilter, redesignCareerFilter, redesignData));
+                redesignCareerFilter.addEventListener('change', updateRedesignVisualizations);
+            }
+
+            initializeFilters(facultyFilter, data, careerFilter);
+            if(redesignFacultyFilter && redesignCareerFilter) {
+                initializeFilters(redesignFacultyFilter, redesignData, redesignCareerFilter);
+            }
+            updateVisualizations(); // Carga inicial
+            updateRedesignVisualizations(); // Carga inicial para rediseño
+        };
     </script>
 </body>
 </html>
