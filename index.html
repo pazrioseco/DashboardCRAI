@@ -143,10 +143,10 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <div class="card text-center flex flex-col justify-center"><p class="text-sm font-semibold text-gray-500 uppercase">Bibliografía Básica Títulos Únicos</p><p id="avg-bbas-unique" class="text-4xl font-bold text-teal-600 mt-2">N/A</p></div>
-            <div class="card text-center flex flex-col justify-center"><p class="text-sm font-semibold text-gray-500 uppercase">Bibliografía Complementaria Títulos Únicos</p><p id="avg-bcom-unique" class="text-4xl font-bold text-sky-600 mt-2">N/A</p></div>
-            <div class="card text-center flex flex-col justify-center"><p class="text-sm font-semibold text-gray-500 uppercase">Bibliografía Básica - Formato electrónico</p><p id="avg-bbas-ebooks" class="text-4xl font-bold text-indigo-600 mt-2">N/A</p></div>
-            <div class="card text-center flex flex-col justify-center"><p class="text-sm font-semibold text-gray-500 uppercase">Bibliografía Complementaria - Formato electrónico</p><p id="avg-bcom-ebooks" class="text-4xl font-bold text-rose-600 mt-2">N/A</p></div>
+            <div class="card text-center flex flex-col justify-center"><p class="text-sm font-semibold text-gray-500 uppercase leading-tight">Bibliografía Básica<br>Títulos Únicos</p><p id="avg-bbas-unique" class="text-4xl font-bold text-teal-600 mt-2">N/A</p></div>
+            <div class="card text-center flex flex-col justify-center"><p class="text-sm font-semibold text-gray-500 uppercase leading-tight">Bibliografía Complementaria<br>Títulos Únicos</p><p id="avg-bcom-unique" class="text-4xl font-bold text-sky-600 mt-2">N/A</p></div>
+            <div class="card text-center flex flex-col justify-center"><p class="text-sm font-semibold text-gray-500 uppercase leading-tight">Bibliografía Básica<br>Formato electrónico</p><p id="avg-bbas-ebooks" class="text-4xl font-bold text-indigo-600 mt-2">N/A</p></div>
+            <div class="card text-center flex flex-col justify-center"><p class="text-sm font-semibold text-gray-500 uppercase leading-tight">Bibliografía Complementaria<br>Formato electrónico</p><p id="avg-bcom-ebooks" class="text-4xl font-bold text-rose-600 mt-2">N/A</p></div>
         </div>
 
         <div class="card mb-8">
@@ -176,8 +176,8 @@
             <div id="redesign-career-container" class="space-y-6">
                 <!-- Tarjeta para Derecho (Rediseño) -->
                 <div class="card border-l-4 border-blue-500">
-                    <p class="text-sm font-semibold text-gray-500 mb-1">Facultad de Derecho</p>
-                    <p class="text-xl font-bold text-gray-900 mb-4">DERECHO (Rediseño)</p>
+                    <p class="text-sm font-semibold text-gray-500 mb-1 text-center">Facultad de Derecho</p>
+                    <p class="text-xl font-bold text-gray-900 mb-4 text-center">DERECHO (Rediseño)</p>
                     
                     <div class="grid grid-cols-2 gap-3 mb-6">
                         <div class="percent-cell bg-green-600"><p class="text-[11px] leading-tight font-semibold">BBAS<br>Títulos únicos</p><p class="text-lg font-bold">97%</p></div>
@@ -236,9 +236,9 @@
             },
             { faculty: "Facultad de Administración y Negocios", career: "INGENIERÍA EN ADMINISTRACIÓN", bbas_unique_percent: 91, bcom_unique_percent: 89, bbas_ebooks_percent: 51, bcom_ebooks_percent: 43, required_basic: 81, required_bcom: 63, existing_basic: 74, existing_bcom: 56 },
             { faculty: "Facultad de Administración y Negocios", career: "INGENIERÍA EN CONTROL DE GESTIÓN", bbas_unique_percent: 92, bcom_unique_percent: 89, bbas_ebooks_percent: 52, bcom_ebooks_percent: 38, required_basic: 117, required_bcom: 146, existing_basic: 108, existing_bcom: 130 },
-            // Facultad de Arquitectura y Construcción
-            { faculty: "Facultad de Arquitectura y Construcción", career: "ARQUITECTURA", bbas_unique_percent: 92, bcom_unique_percent: 90, bbas_ebooks_percent: 20, bcom_ebooks_percent: 29, required_basic: 85, required_bcom: 99, existing_basic: 78, existing_bcom: 89 },
-            { faculty: "Facultad de Arquitectura y Construcción", career: "INGENIERÍA EN CONSTRUCCIÓN", bbas_unique_percent: 92, bcom_unique_percent: 96, bbas_ebooks_percent: 41, bcom_ebooks_percent: 48, required_basic: 103, required_bcom: 98, existing_basic: 95, existing_bcom: 94 },
+            // Facultad de Arquitectura, Construcción y Medio Ambiente
+            { faculty: "Facultad de Arquitectura, Construcción y Medio Ambiente", career: "ARQUITECTURA", bbas_unique_percent: 92, bcom_unique_percent: 90, bbas_ebooks_percent: 20, bcom_ebooks_percent: 29, required_basic: 85, required_bcom: 99, existing_basic: 78, existing_bcom: 89 },
+            { faculty: "Facultad de Arquitectura, Construcción y Medio Ambiente", career: "INGENIERÍA EN CONSTRUCCIÓN", bbas_unique_percent: 92, bcom_unique_percent: 96, bbas_ebooks_percent: 41, bcom_ebooks_percent: 48, required_basic: 103, required_bcom: 98, existing_basic: 95, existing_bcom: 94 },
             // Facultad de Ciencias de la Salud
             { faculty: "Facultad de Ciencias de la Salud", career: "ENFERMERÍA", bbas_unique_percent: 98, bcom_unique_percent: 98, bbas_ebooks_percent: 48, bcom_ebooks_percent: 51, required_basic: 99, required_bcom: 107, existing_basic: 97, existing_bcom: 105 },
             { faculty: "Facultad de Ciencias de la Salud", career: "ODONTOLOGÍA", bbas_unique_percent: 94, bcom_unique_percent: 93, bbas_ebooks_percent: 31, bcom_ebooks_percent: 29, required_basic: 109, required_bcom: 117, existing_basic: 103, existing_bcom: 109 },
@@ -359,7 +359,7 @@
                 card.className = 'card flex flex-col justify-between';
                 const formatPercent = (p) => (typeof p === 'number' ? `${p}%` : 'N/A');
                 card.innerHTML = `
-                    <div><p class="text-sm font-semibold text-gray-500 mb-1">${item.faculty}</p><p class="text-xl font-bold text-gray-900 mb-4">${item.career}</p></div>
+                    <div><p class="text-sm font-semibold text-gray-500 mb-1 text-center">${item.faculty}</p><p class="text-xl font-bold text-gray-900 mb-4 text-center">${item.career}</p></div>
                     <div class="grid grid-cols-2 gap-3">
                         <div class="percent-cell ${getHeatmapColorClass(item.bbas_unique_percent)}"><p class="text-[11px] leading-tight font-semibold">BBAS<br>Títulos únicos</p><p class="text-lg font-bold">${formatPercent(item.bbas_unique_percent)}</p></div>
                         <div class="percent-cell ${getHeatmapColorClass(item.bcom_unique_percent)}"><p class="text-[11px] leading-tight font-semibold">BCOM<br>Títulos únicos</p><p class="text-lg font-bold">${formatPercent(item.bcom_unique_percent)}</p></div>
