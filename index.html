@@ -377,10 +377,10 @@
                     card.innerHTML = `
                         <div class="text-center"><p class="text-sm font-semibold text-gray-500 mb-1">${item.faculty}</p><p class="text-xl font-bold text-gray-900 mb-4">${item.career}</p></div>
                         <div class="grid grid-cols-2 gap-3">
-                            <div class="percent-cell ${getHeatmapColorClass(item.bbas_unique_percent)}"><p class="text-xs font-semibold">BBAS T. Únicos</p><p class="text-lg font-bold">${formatPercent(item.bbas_unique_percent)}</p></div>
-                            <div class="percent-cell ${getHeatmapColorClass(item.bcom_unique_percent)}"><p class="text-xs font-semibold">BCOM T. Únicos</p><p class="text-lg font-bold">${formatPercent(item.bcom_unique_percent)}</p></div>
-                            <div class="percent-cell ${getHeatmapColorClass(item.bbas_ebooks_percent)}"><p class="text-xs font-semibold">BBAS E-Books</p><p class="text-lg font-bold">${formatPercent(item.bbas_ebooks_percent)}</p></div>
-                            <div class="percent-cell ${getHeatmapColorClass(item.bcom_ebooks_percent)}"><p class="text-xs font-semibold">BCOM E-Books</p><p class="text-lg font-bold">${formatPercent(item.bcom_ebooks_percent)}</p></div>
+                            <div class="percent-cell ${getHeatmapColorClass(item.bbas_unique_percent)}"><p class="text-xs font-semibold">BBAS Títulos únicos</p><p class="text-lg font-bold">${formatPercent(item.bbas_unique_percent)}</p></div>
+                            <div class="percent-cell ${getHeatmapColorClass(item.bcom_unique_percent)}"><p class="text-xs font-semibold">BCOM Títulos únicos</p><p class="text-lg font-bold">${formatPercent(item.bcom_unique_percent)}</p></div>
+                            <div class="percent-cell ${getHeatmapColorClass(item.bbas_ebooks_percent)}"><p class="text-xs font-semibold">BBAS Formato electrónico</p><p class="text-lg font-bold">${formatPercent(item.bbas_ebooks_percent)}</p></div>
+                            <div class="percent-cell ${getHeatmapColorClass(item.bcom_ebooks_percent)}"><p class="text-xs font-semibold">BCOM Formato electrónico</p><p class="text-lg font-bold">${formatPercent(item.bcom_ebooks_percent)}</p></div>
                         </div>`;
                     careerCardsContainer.appendChild(card);
                 });
@@ -493,6 +493,6 @@
             updateVisualizations(); // Carga inicial
             updateRedesignVisualizations(); // Carga inicial para rediseño
         };
-    </script>
+    </script>   
 </body>
 </html>
