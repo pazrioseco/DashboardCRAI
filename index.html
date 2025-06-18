@@ -153,7 +153,7 @@
         </div>
 
         <div class="card mb-8">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Cobertura porcentual por carrera</h2>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Cobertura Porcentual por Carrera</h2>
             <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mb-6 text-sm text-gray-600 border-t border-b py-3 bg-gray-50 rounded-md">
                 <span class="font-semibold mr-4">Leyenda:</span>
                 <div class="flex items-center"><span class="w-4 h-4 rounded mr-2 percent-high"></span><span>90% o más</span></div>
@@ -174,7 +174,7 @@
         </div>
 
         <div class="card">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Carreras en rediseño</h2>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Carreras en Rediseño</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div class="card bg-gray-50">
                     <label for="redesign-faculty-filter" class="block text-lg font-medium mb-2">Filtrar por Facultad:</label>
@@ -221,13 +221,81 @@
                     { asignatura: 'ESPECIALIDAD V: NEGOCIACIÓN EFECTIVA', title: 'La Negociación Racional en un Mundo Irracional', author: 'BAZERMAN, Max. y NEALE, Margaret', reason: 'Descatalogado' }
                 ]
             },
-            { faculty: "Facultad de Administración y Negocios", career: "INGENIERÍA EN ADMINISTRACIÓN", bbas_unique_percent: 91, bcom_unique_percent: 89, bbas_ebooks_percent: 51, bcom_ebooks_percent: 43, required_basic: 81, required_bcom: 63, existing_basic: 74, existing_bcom: 56 },
-            { faculty: "Facultad de Administración y Negocios", career: "INGENIERÍA EN CONTROL DE GESTIÓN", bbas_unique_percent: 92, bcom_unique_percent: 89, bbas_ebooks_percent: 52, bcom_ebooks_percent: 38, required_basic: 117, required_bcom: 146, existing_basic: 108, existing_bcom: 130 },
+            { 
+                faculty: "Facultad de Administración y Negocios", 
+                career: "INGENIERÍA EN ADMINISTRACIÓN", 
+                bbas_unique_percent: 91, 
+                bcom_unique_percent: 89, 
+                bbas_ebooks_percent: 51, 
+                bcom_ebooks_percent: 43, 
+                required_basic: 81, 
+                required_bcom: 63, 
+                existing_basic: 74, 
+                existing_bcom: 56,
+                missing_basic_titles: [
+                    { asignatura: 'GESTIÓN EN AMBIENTE ERP Y COMERCIO ELECTRÓNICO', title: 'E-Marketing', author: 'JUDY STRAUSS y RAYMOND FROST', reason: 'Descatalogado' },
+                    { asignatura: 'CONTROL DE GESTIÓN', title: 'Finanzas y presupuestos (interpretación y elaboración)', author: 'Tovar, José', reason: 'Compra 2025' },
+                    { asignatura: 'GESTIÓN DE EMPRESA', title: 'Introducción a la Gestión de la Calidad', author: 'José Luis Fernández Sánchez', reason: 'No disponible' },
+                    { asignatura: 'COMERCIO EXTERIOR', title: 'La Regulación Jurídica del Comercio Internacional', author: 'Peña Neira, Sergio', reason: 'No disponible' },
+                    { asignatura: 'GESTIÓN DE EMPRESA', title: 'Logística Integral: Gestión y Operación de la Cadena de Suministro', author: 'Juan José Lopez', reason: 'No disponible' },
+                    { asignatura: 'GESTIÓN EN AMBIENTE ERP Y COMERCIO ELECTRÓNICO', title: 'Marketing digital en acción', author: 'Meister, Martin', reason: 'Compra 2025' },
+                    { asignatura: 'GESTIÓN DE EMPRESA', title: 'Productividad: Cómo Aumentar la Eficiencia en las Organizaciones', author: 'José María Mella Márquez', reason: 'No disponible' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'INGLÉS III', title: 'Diccionario de términos económicos, financieros y comerciales', author: 'Alcaraz Varó, E.; Hughes, B.', reason: 'No disponible' },
+                    { asignatura: 'GESTIÓN DE EMPRESA', title: 'Estrategias Logísticas', author: 'Rafael Rodríguez Monroy y José Antonio Domínguez Machuca', reason: 'No disponible' },
+                    { asignatura: 'GESTIÓN DE EMPRESA', title: 'Gestión de la calidad total', author: 'John S. Oakland', reason: 'Descatalogado' },
+                    { asignatura: 'GESTIÓN DE EMPRESA', title: 'Lean Thinking: Banish Waste and Create Wealth in Your Corporation', author: 'Womack, James P.', reason: 'Compra 2025' },
+                    { asignatura: 'GESTIÓN DE EMPRESA', title: 'Logística y Operaciones en la Empresa: Perspectiva Integral', author: 'Miguel Ángel Martín Sánchez', reason: 'No disponible' },
+                    { asignatura: 'COMERCIO EXTERIOR', title: 'Ordenanza de Aduanas y otras Nomas Anexas', author: 'Vendrell, Montserrat', reason: 'Compra 2025' },
+                    { asignatura: 'GESTIÓN DE EMPRESA', title: 'Supply Chain Management: Strategy, Planning and Operation', author: 'Chopra, Sunil', reason: 'Compra 2025' }
+                ]
+            },
+            { 
+                faculty: "Facultad de Administración y Negocios", 
+                career: "INGENIERÍA EN CONTROL DE GESTIÓN", 
+                bbas_unique_percent: 93, 
+                bcom_unique_percent: 89, 
+                bbas_ebooks_percent: 50, 
+                bcom_ebooks_percent: 43, 
+                required_basic: 117, 
+                required_bcom: 146, 
+                existing_basic: 109, 
+                existing_bcom: 130,
+                missing_basic_titles: [
+                    { asignatura: 'INGLÉS PARA LOS NEGOCIOS III', title: 'Business English Textbook', author: 'Nikolaenko, E.B.', reason: 'No Disponible' },
+                    { asignatura: 'CONSULTORIA EN CONTROL DE GESTIÓN (Ev. Continua)', title: 'Consultoría De Negocios', author: 'TOPPIN, Gilbert', reason: 'Descatalogado' },
+                    { asignatura: 'GESTIÓN DE COMERCIO EXTERIOR', title: 'El comercio internacional de servicios', author: 'Costa, María Francisca', reason: 'No Disponible' },
+                    { asignatura: 'INGLÉS PARA LOS NEGOCIOS III', title: 'English for Internal Auditors', author: 'MURPHY, Amanda y BELL, Catherine.', reason: 'Descatalogado' },
+                    { asignatura: 'NORMATIVA TRIBUTARIA I', title: 'Impuesto al valor agregado en Chile', author: 'PINTO, G.R.', reason: 'Descatalogado' },
+                    { asignatura: 'GESTIÓN DE COMERCIO EXTERIOR', title: 'La Regulación Jurídica del Comercio Internacional', author: 'Peña Neira, Sergio', reason: 'No Disponible' },
+                    { asignatura: 'HERRAMIENTAS ERP PARA LA GESTIÓN CONTABLE', title: 'Manual Introducción al Sistema SAP R/3', author: 'Díaz Luis, Fernando', reason: 'Descatalogado' },
+                    { asignatura: 'CONTROL DE GESTIÓN PARA EL DESARROLLO ORGANIZACIONAL', title: 'The Execution Premium: integrando la estrategia y las operaciones para lograr ventajas competitivas', author: 'Kaplan, Robert S.', reason: 'No Disponible' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'MKT E INNOVA. PARA EMPRENDI.', title: 'Administración de Marketing', author: 'MULLINS, John', reason: 'No Disponible' },
+                    { asignatura: 'ECONOMETRÍA APLICADA', title: 'Aplicación de metodologías econométricas univariantes en la investigación en administración', author: 'DE LA FUENTE H, et. al.', reason: 'No Disponible' },
+                    { asignatura: 'GESTIÓN CONTABLE I', title: 'Contabilidad y finanzas, bajo IFRS', author: 'Torres Salazar, Gabriel', reason: 'Descatalogado' },
+                    { asignatura: 'PLANIFICACIÓN ESTRATÉGICA', title: 'El nuevo libro de jugadas para las F&A', author: 'Clayton M. Christensen, Richard Alton, Curtis Rising y Andrew Waldeck', reason: 'No Disponible' },
+                    { asignatura: 'GESTIÓN DE COMERCIO EXTERIOR', title: 'Guía rapida para entender las principales novedades del CAU', author: 'IBORRA, Sonia. GARCÍA, Jesús. LOPÉZ, Luján. HORTAL, Ricardo', reason: 'Descatalogado' },
+                    { asignatura: 'CASOS DE NEGOCIOS EN AMBIENTE ERP', title: 'Integrating Materials Management with Financial Accounting', author: 'MAHBOOB, Faisal', reason: 'Compra 2025' },
+                    { asignatura: 'MACROECONOMÍA', title: 'Macroeconomía', author: 'Stiglitz Joseph', reason: 'No Disponible' },
+                    { asignatura: 'CONTROL DE GESTIÓN', title: 'Mapas estratégicos: convirtiendo activos intangibles en resultados tangibles', author: 'Kaplan, Robert S.', reason: 'Descatalogado' },
+                    { asignatura: 'ECONOMETRÍA APLICADA', title: 'Modelo de Regresión Lineal', author: 'FLÓREZ, Álvaro José', reason: 'No Disponible' },
+                    { asignatura: 'GESTIÓN DE COMERCIO EXTERIOR', title: 'Ordenanza de Aduanas y otras Nomas Anexas', author: 'Vendrell, Montserrat', reason: 'Compra 2025' },
+                    { asignatura: 'CONTROL DE GESTIÓN PARA EL DESARROLLO ORGANIZACIONAL', title: 'Palancas de control', author: 'SIMONS, R.', reason: 'No Disponible' },
+                    { asignatura: 'ECONOMETRÍA APLICADA', title: "Principles of Econometrics / Instructor's Manual For Principles of Econometrics", author: 'Hill, R. Carter', reason: 'No Disponible' },
+                    { asignatura: 'CASOS DE NEGOCIOS EN AMBIENTE ERP', title: 'Purchasing with SAP ERP Materials Management-Sales and Distribution', author: 'CHUDY MATT; CASTEDO, Luis', reason: 'Compra 2025' },
+                    { asignatura: 'INTRODUCCIÓN AL MEDIO PROFESIONAL', title: 'Redacción Profesional: Técnicas de redacción para la empresa', author: 'PORTOCARRERO , Felipe', reason: 'Descatalogado' },
+                    { asignatura: 'BASES DE DATOS', title: 'Sistemas de información para la gestión empresaria : planeamiento, estrategia, tecnología', author: 'Lardent, Alberto', reason: 'No Disponible' },
+                    { asignatura: 'CONTROL DE GESTIÓN', title: 'The Execution Premium: integrando la estrategia y las operaciones para lograr ventajas competitivas', author: 'Kaplan, Robert S.', reason: 'No Disponible' }
+                ]
+            },
             // Facultad de Arquitectura, Construcción y Medio Ambiente
             { faculty: "Facultad de Arquitectura, Construcción y Medio Ambiente", career: "ARQUITECTURA", bbas_unique_percent: 92, bcom_unique_percent: 90, bbas_ebooks_percent: 20, bcom_ebooks_percent: 29, required_basic: 85, required_bcom: 99, existing_basic: 78, existing_bcom: 89 },
             { faculty: "Facultad de Arquitectura, Construcción y Medio Ambiente", career: "INGENIERÍA EN CONSTRUCCIÓN", bbas_unique_percent: 92, bcom_unique_percent: 96, bbas_ebooks_percent: 41, bcom_ebooks_percent: 48, required_basic: 103, required_bcom: 98, existing_basic: 95, existing_bcom: 94 },
             // Facultad de Ciencias de la Salud
-            { faculty: "Facultad de Ciencias de la Salud", career: "ENFERMERÍA", bbas_unique_percent: 98, bcom_unique_percent: 98, bbas_ebooks_percent: 54, bcom_ebooks_percent: 52, required_basic: 99, required_bcom: 107, existing_basic: 97, existing_bcom: 105 },
+            { faculty: "Facultad de Ciencias de la Salud", career: "ENFERMERÍA", bbas_unique_percent: 98, bcom_unique_percent: 98, bbas_ebooks_percent: 48, bcom_ebooks_percent: 51, required_basic: 99, required_bcom: 107, existing_basic: 97, existing_bcom: 105 },
             { faculty: "Facultad de Ciencias de la Salud", career: "ODONTOLOGÍA", bbas_unique_percent: 94, bcom_unique_percent: 93, bbas_ebooks_percent: 31, bcom_ebooks_percent: 29, required_basic: 109, required_bcom: 117, existing_basic: 103, existing_bcom: 109 },
             { faculty: "Facultad de Ciencias de la Salud", career: "FONOAUDIOLOGÍA", bbas_unique_percent: 96, bcom_unique_percent: 92, bbas_ebooks_percent: 12, bcom_ebooks_percent: 11, required_basic: 100, required_bcom: 119, existing_basic: 96, existing_bcom: 110 },
             { faculty: "Facultad de Ciencias de la Salud", career: "KINESIOLOGÍA", bbas_unique_percent: 98, bcom_unique_percent: 98, bbas_ebooks_percent: 10, bcom_ebooks_percent: 7, required_basic: 104, required_bcom: 113, existing_basic: 102, existing_bcom: 111 },
@@ -375,7 +443,7 @@
                     card.className = 'card flex flex-col justify-between';
                     const formatPercent = (p) => (typeof p === 'number' ? `${p}%` : 'N/A');
                     card.innerHTML = `
-                        <div class="text-center"><p class="text-sm font-semibold text-gray-500 mb-1">${item.faculty}</p><p class="text-xl font-bold text-gray-900 mb-4">${item.career}</p></div>
+                        <div><p class="text-sm font-semibold text-gray-500 mb-1 text-center">${item.faculty}</p><p class="text-xl font-bold text-gray-900 mb-4 text-center">${item.career}</p></div>
                         <div class="grid grid-cols-2 gap-3">
                             <div class="percent-cell ${getHeatmapColorClass(item.bbas_unique_percent)}"><p class="text-xs font-semibold">BBAS Títulos únicos</p><p class="text-lg font-bold">${formatPercent(item.bbas_unique_percent)}</p></div>
                             <div class="percent-cell ${getHeatmapColorClass(item.bcom_unique_percent)}"><p class="text-xs font-semibold">BCOM Títulos únicos</p><p class="text-lg font-bold">${formatPercent(item.bcom_unique_percent)}</p></div>
@@ -493,6 +561,6 @@
             updateVisualizations(); // Carga inicial
             updateRedesignVisualizations(); // Carga inicial para rediseño
         };
-    </script>   
+    </script>
 </body>
 </html>
