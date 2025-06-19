@@ -203,8 +203,8 @@
                 career: "INGENIERÍA COMERCIAL", 
                 bbas_unique_percent: 97, 
                 bcom_unique_percent: 96, 
-                bbas_ebooks_percent: 41, 
-                bcom_ebooks_percent: 46, 
+                bbas_ebooks_percent: 43, 
+                bcom_ebooks_percent: 45, 
                 required_basic: 113, 
                 required_bcom: 106, 
                 existing_basic: 110, 
@@ -292,26 +292,500 @@
                 ]
             },
             // Facultad de Arquitectura, Construcción y Medio Ambiente
-            { faculty: "Facultad de Arquitectura, Construcción y Medio Ambiente", career: "ARQUITECTURA", bbas_unique_percent: 92, bcom_unique_percent: 90, bbas_ebooks_percent: 20, bcom_ebooks_percent: 29, required_basic: 85, required_bcom: 99, existing_basic: 78, existing_bcom: 89 },
-            { faculty: "Facultad de Arquitectura, Construcción y Medio Ambiente", career: "INGENIERÍA EN CONSTRUCCIÓN", bbas_unique_percent: 92, bcom_unique_percent: 96, bbas_ebooks_percent: 41, bcom_ebooks_percent: 48, required_basic: 103, required_bcom: 98, existing_basic: 95, existing_bcom: 94 },
+            { 
+                faculty: "Facultad de Arquitectura, Construcción y Medio Ambiente", 
+                career: "ARQUITECTURA", 
+                bbas_unique_percent: 92, 
+                bcom_unique_percent: 90, 
+                bbas_ebooks_percent: 20, 
+                bcom_ebooks_percent: 29, 
+                required_basic: 85, 
+                required_bcom: 99, 
+                existing_basic: 78, 
+                existing_bcom: 89,
+                missing_basic_titles: [
+                    { asignatura: 'TALLER DE CICLO INICIAL', title: 'Análisis de la arquitectura', author: 'Unwin, Simón', reason: 'Descatalogado' },
+                    { asignatura: 'ELECTRO DE ETICA, ETICA Y SOCIEDAD: UNA MIRADA ACTUAL', title: 'Etica General.', author: 'VIGO, A.', reason: 'Descatalogado' },
+                    { asignatura: 'CIUDAD Y PAISAJE', title: 'Instrumentos de Realizacion De La Politica Urbana: Ajuntament de Lleida', author: 'LLOP, Josep M.', reason: 'No disponible' },
+                    { asignatura: 'DIBUJO 3D', title: 'La Forma Visual De La Arquitectura', author: "ARNHEIM, Rudolf'", reason: 'Descatalogado' },
+                    { asignatura: 'ARQUITECTURA DEL PAISAJE, ESPECIALIDAD 9-1', title: 'La Transformación De La Ciudad. 25 Proyectos Internacionales De Arquitectura Urbana a Principios Del Siglo Xxi', author: 'POWELL, Kenneth.', reason: 'Descatalogado' },
+                    { asignatura: 'PATRIMONIO', title: 'Las Formas de Ocupación del Territorio de Tierra del Fuego.', author: 'GARCÉS, Eugenio.', reason: 'Descatalogado' },
+                    { asignatura: 'CIENCIA DE LOS MATERIALES Y DE OBRA GRUESA', title: 'Léxico Ilustrado De Terminología Constructiva', author: 'NELSON, Rónar', reason: 'No disponible' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'ARQUITECTURA DEL PAISAJE, ESPECIALIDAD 9-1', title: 'ALCALDÍA DE MEDELLÍN, 1994 - 2014. Guía De Arquitectura De Medellín. Proyectos Editoral.', author: '', reason: 'No disponible' },
+                    { asignatura: 'INTRODUCCIÓN AL URBANISMO Y PAISAJE', title: 'Arquitectura pintada', author: 'Garisoain, Carlos (coord.)', reason: 'Descatalogado' },
+                    { asignatura: 'INTRODUCCIÓN A LA ARQUITECTURA', title: 'Breve historia de la arquitectura: Siglo XIX - XX. Tomo 1', author: 'BELLUCCI, Alberto', reason: 'Descatalogado' },
+                    { asignatura: 'PATRIMONIO', title: 'Cementerios de la Araucanía', author: 'RODRÍGUEZ, CRISTIAN; GAJARDO, ANDREA', reason: 'No disponible' },
+                    { asignatura: 'CIENCIA DE LOS MATERIALES Y DE OBRA GRUESA', title: 'Construcciones para Arquitectos. Tomos 1 y 2', author: 'Ávalos, Ernesto', reason: 'Descatalogado' },
+                    { asignatura: 'TALLER DE CICLO INTERMEDIO URBANISMO SOCIAL (EX. CICLO I) A+S', title: 'Los contornos urbanísticos en la comunidad de Madrid: la experiencia consolidada de un programa de desarrollo urbano', author: 'COMUNIDAD DE MADRID. Concejalía de Obras Públicas, Urbanismo y Transporte', reason: 'Descatalogado' },
+                    { asignatura: 'PATRIMONIO', title: 'Molinos Victoria', author: 'RODRÍGUEZ, Cristián', reason: 'No disponible' },
+                    { asignatura: 'INTRODUCCIÓN AL URBANISMO Y PAISAJE', title: 'SANTIAGO. Grafias Futura. 2000. 100p.', author: 'MINISTERIO DE VIVIENDA Y URBANISMO', reason: 'No disponible' },
+                    { asignatura: 'CIENCIA DE LOS MATERIALES Y DE OBRA GRUESA', title: 'Tecnología de la construcción en hormigón', author: 'Dababneh, Hernán', reason: 'Descatalogado' },
+                    { asignatura: 'ARQUITECTURA CONTEMPORÁNEA', title: 'Unifying Architectural Theory: Form, Language, Complexity', author: 'SALINGAROS, Nikos', reason: 'No disponible' }
+                ] 
+            },
+            { 
+                faculty: "Facultad de Arquitectura, Construcción y Medio Ambiente", 
+                career: "INGENIERÍA EN CONSTRUCCIÓN", 
+                bbas_unique_percent: 92, 
+                bcom_unique_percent: 96, 
+                bbas_ebooks_percent: 41, 
+                bcom_ebooks_percent: 48, 
+                required_basic: 103, 
+                required_bcom: 98, 
+                existing_basic: 95, 
+                existing_bcom: 94,
+                missing_basic_titles: [
+                    { asignatura: 'INGENIERÍA EN CONSTRUCCIÓN: ESTRUCTURAS METÁLICAS', title: 'Estructuras De Acero - Ejecucion Construcciones De Acero - Perfiles, Lamindos, Soldados Y Tubos. Nch428:2017', author: 'Instituto Nacional de Normalización', reason: 'Descatalogado' },
+                    { asignatura: 'INGENIERÍA EN CONSTRUCCIÓN: COORDINACIÓN BIM', title: 'Guia Practica Para La Implantacion De Entornos Bim En Despachos De Arquitectura E Ingenieria.', author: 'MORGA, Miguel.', reason: 'Descatalogado' },
+                    { asignatura: 'INGENIERÍA EN CONSTRUCCIÓN: OBRAS CIVILES E HIDRÁULICAS', title: 'Hidráulica de Canales Abiertos', author: 'CHOW, Ven Te.', reason: 'Descatalogado' },
+                    { asignatura: 'INGENIERÍA EN CONSTRUCCIÓN: TECNOLOGÍA DEL HORMIGÓN', title: 'Hormigones Y Morteros', author: 'BUSTILLO, Manuel', reason: 'Descatalogado' },
+                    { asignatura: 'INGENIERÍA EN CONSTRUCCIÓN: COMPUTACIÓN', title: 'Instrumento Clave 4 Clase De Computacion', author: 'UNIVERSIDAD AUTONOMA DE CHILE', reason: 'Referencia Incompleta' },
+                    { asignatura: 'INGENIERÍA EN CONSTRUCCIÓN: MECÁNICA DE SUELOS', title: 'Mecánica De Suelos', author: 'BERRY, Peter, y REID, David.', reason: 'Descatalogado' },
+                    { asignatura: 'INGENIERÍA EN CONSTRUCCIÓN: TALLER INTEGRADO', title: 'Normativa Instituto Nacional de Normalización', author: 'INN', reason: 'No especificada' },
+                    { asignatura: 'INGENIERÍA EN CONSTRUCCIÓN: HORMIGÓN ARMADO', title: 'Requisitos De Reglamento Para Concreto Estructural Aci318S-14 Y Comentarios a Requisitos de Reglamento Para Concreto Estructural Aci318Sr-14', author: 'AMERICAN CONCRETE INSTITUTE (Estados Unidos).', reason: 'Compra 2025' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'INGENIERÍA EN CONSTRUCCIÓN: CIENCIA DE LOS MATERIALES DE CONSTRUCCIÓN', title: 'Ciencia de Materiales de construcción (10a ed)', author: 'MANGONON, Pat. L. M.', reason: 'Descatalogado' },
+                    { asignatura: 'INGENIERÍA EN CONSTRUCCIÓN: OBRAS VIALES I', title: 'Diseño Moderno de Pavimentos Asfálticos', author: 'MINKAP, Silene', reason: 'Titulo de traduccion - No disponible' },
+                    { asignatura: 'INGENIERÍA EN CONSTRUCCIÓN: OBRAS CIVILES E HIDRÁULICAS', title: 'Hidráulica de canales', author: 'RODRIGUEZ, PEDRO', reason: 'No disponible' },
+                    { asignatura: 'INGENIERÍA EN CONSTRUCCIÓN: TECNOLOGÍA DEL HORMIGÓN', title: 'Manual De Carreteras Practico', author: '[AQ]', reason: 'Compra 2025' }
+                ] 
+            },
             // Facultad de Ciencias de la Salud
-            { faculty: "Facultad de Ciencias de la Salud", career: "ENFERMERÍA", bbas_unique_percent: 98, bcom_unique_percent: 98, bbas_ebooks_percent: 48, bcom_ebooks_percent: 51, required_basic: 99, required_bcom: 107, existing_basic: 97, existing_bcom: 105 },
-            { faculty: "Facultad de Ciencias de la Salud", career: "ODONTOLOGÍA", bbas_unique_percent: 94, bcom_unique_percent: 93, bbas_ebooks_percent: 31, bcom_ebooks_percent: 29, required_basic: 109, required_bcom: 117, existing_basic: 103, existing_bcom: 109 },
-            { faculty: "Facultad de Ciencias de la Salud", career: "FONOAUDIOLOGÍA", bbas_unique_percent: 96, bcom_unique_percent: 92, bbas_ebooks_percent: 12, bcom_ebooks_percent: 11, required_basic: 100, required_bcom: 119, existing_basic: 96, existing_bcom: 110 },
-            { faculty: "Facultad de Ciencias de la Salud", career: "KINESIOLOGÍA", bbas_unique_percent: 98, bcom_unique_percent: 98, bbas_ebooks_percent: 10, bcom_ebooks_percent: 7, required_basic: 104, required_bcom: 113, existing_basic: 102, existing_bcom: 111 },
-            { faculty: "Facultad de Ciencias de la Salud", career: "MEDICINA", bbas_unique_percent: 94, bcom_unique_percent: 89, bbas_ebooks_percent: 36, bcom_ebooks_percent: 33, required_basic: 116, required_bcom: 150, existing_basic: 109, existing_bcom: 134 },
-            { faculty: "Facultad de Ciencias de la Salud", career: "NUTRICIÓN Y DIETÉTICA", bbas_unique_percent: 93, bcom_unique_percent: 94, bbas_ebooks_percent: 8, bcom_ebooks_percent: 6, required_basic: 103, required_bcom: 139, existing_basic: 96, existing_bcom: 131 },
-            { faculty: "Facultad de Ciencias de la Salud", career: "OBSTETRICIA Y PUERICULTURA", bbas_unique_percent: 97, bcom_unique_percent: 97, bbas_ebooks_percent: 9, bcom_ebooks_percent: 10, required_basic: 88, required_bcom: 92, existing_basic: 85, existing_bcom: 89 },
-            { faculty: "Facultad de Ciencias de la Salud", career: "QUÍMICA Y FARMACIA", bbas_unique_percent: 94, bcom_unique_percent: 94, bbas_ebooks_percent: 11, bcom_ebooks_percent: 10, required_basic: 89, required_bcom: 100, existing_basic: 84, existing_bcom: 94 },
-            { faculty: "Facultad de Ciencias de la Salud", career: "TERAPIA OCUPACIONAL", bbas_unique_percent: 96, bcom_unique_percent: 96, bbas_ebooks_percent: 5, bcom_ebooks_percent: 5, required_basic: 112, required_bcom: 132, existing_basic: 107, existing_bcom: 127 },
+            { 
+                faculty: "Facultad de Ciencias de la Salud", 
+                career: "ENFERMERÍA", 
+                bbas_unique_percent: 98, 
+                bcom_unique_percent: 98, 
+                bbas_ebooks_percent: 48, 
+                bcom_ebooks_percent: 51, 
+                required_basic: 99, 
+                required_bcom: 107, 
+                existing_basic: 97, 
+                existing_bcom: 105,
+                missing_basic_titles: [
+                    { asignatura: 'ENFERMERÍA DEL ADULTO MAYOR', title: 'Enfermería Geriátrica', author: 'STANLEY M./Blair K./Beare P./', reason: 'Descatalogado' },
+                    { asignatura: 'FUNDAMENTOS DE ENFERMERÍA', title: 'Modelo De Orem, Aplicación Práctica', author: 'CAVANAGH, Stephen', reason: 'Descatalogado' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'CUIDADOS PALIATIVOS Y PROCESO DE MORIR', title: 'Cuidados paliativos: guías práctica', author: 'NAVARRO, J. y Jiménez P.', reason: 'Descatalogado' },
+                    { asignatura: 'FUNDAMENTOS DE ENFERMERÍA', title: 'Historia de la enfermería: aspectos relevantes desde sus orígenes hasta el siglo XXI', author: 'PARENTINI María Rosa', reason: 'Descatalogado' }
+                ]
+            },
+            { 
+                faculty: "Facultad de Ciencias de la Salud", 
+                career: "ODONTOLOGÍA", 
+                bbas_unique_percent: 94, 
+                bcom_unique_percent: 93, 
+                bbas_ebooks_percent: 31, 
+                bcom_ebooks_percent: 29, 
+                required_basic: 109, 
+                required_bcom: 117, 
+                existing_basic: 103, 
+                existing_bcom: 109,
+                missing_basic_titles: [
+                    { asignatura: 'PATOLOGÍA ORAL', title: 'Atlas De Patología De Los Maxilares.', author: 'ALFARO, L y MARTÍNEZ, B.', reason: 'Compra 2025' },
+                    { asignatura: 'ESTOMATOLOGÍA CLÍNICA II', title: 'Cirugía Oral Y Maxilofacial.', author: 'LÓPEZ, A., MARTÍN-GRANIZO, R.', reason: 'Compra 2025' },
+                    { asignatura: 'PRECLÍNICO DE BIOMATERIALES DENTALES II', title: 'Diseño De Prótesis Parcial Removible.', author: 'LOZA, D.', reason: 'Descatalogado' },
+                    { asignatura: 'ELECTIVO DE RESPONSABILIDAD SOCIAL: MEDIO AMBIENTE Y DESARROLLO SOSTENIB', title: 'Ecología: El Puente Entre Ciencia Y Sociedad.', author: 'ODUM, S.', reason: 'Descatalogado' },
+                    { asignatura: 'CLÍNICA INTEGRAL DEL ADULTO Y ADULTO MAYOR I', title: 'Odontogeriatría. Rehabilitación Oral Del Paciente Adulto Mayor.', author: 'CUERVO, J.', reason: 'Compra 2025' },
+                    { asignatura: 'CLÍNICA INTEGRAL DEL NIÑO Y ADOLESCENTE I', title: 'Odontología Pediátrica.', author: 'PINKHAM, J.R.', reason: 'Descatalogado' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'PRECLÍNICO DE BIOMATERIALES DENTALES I', title: 'Color in Natural Teeth and Direct Resin Composite Restorations: Essential Aspects', author: 'BARATIERI, L., MONTERO, S.', reason: 'No disponible' },
+                    { asignatura: 'MÓDULO DIAGNÓSTICO II: OCLUSIÓN E IMAGENOLOGÍA', title: 'Disfunción de la Articulación Témporomandibular. Una Guía Práctica', author: 'ISBERG, A.', reason: 'Descatalogado' },
+                    { asignatura: 'PROYECTO DE INVESTIGACION', title: 'El proyecto y la Metodología de la Investigación', author: 'YNOUB, R.', reason: 'Descatalogado' },
+                    { asignatura: 'PRECLÍNICO DE BIOMATERIALES DENTALES II', title: 'Enfilado Dentario, Bases para la Estética y la Estática en Prótesis Totales', author: 'MICHELSEN, J.L.', reason: 'Descatalogado' },
+                    { asignatura: 'CLÍNICA INTEGRAL DEL NIÑO Y ADOLESCENTE I', title: 'Manual de Ortodoncia', author: 'MOYERS, R.', reason: 'Descatalogado' },
+                    { asignatura: 'INTRODUCCIÓN A LA ODONTOLOGÍA', title: 'Nuevas estrategias en Cariología. Factores de riesgo y tratamiento', author: 'URZÚA, I; STANKE, F.', reason: 'Descatalogado' },
+                    { asignatura: 'PRECLÍNICO DE BIOMATERIALES DENTALES I', title: 'Physical Properties of a Hybrid and a Nanohybrid Dental Light Cured Resina Composites', author: 'SIDEROIDOU, I., KARABELA, M., MICHELIQU, C., ...', reason: 'No disponible' },
+                    { asignatura: 'PRECLÍNICO DE BIOMATERIALES DENTALES I', title: 'Principios Básicos en las Preparaciones Dentarias', author: 'SHILLINGBURG, H.', reason: 'Descatalogado' }
+                ]
+            },
+            { 
+                faculty: "Facultad de Ciencias de la Salud", 
+                career: "FONOAUDIOLOGÍA", 
+                bbas_unique_percent: 96, 
+                bcom_unique_percent: 92, 
+                bbas_ebooks_percent: 12, 
+                bcom_ebooks_percent: 11, 
+                required_basic: 100, 
+                required_bcom: 119, 
+                existing_basic: 96, 
+                existing_bcom: 110,
+                missing_basic_titles: [
+                    { asignatura: 'INTERVENCIÓN FONOAUDIOLÓGICA EN AUDICIÓN Y EQUILIBRIO II (A+S)', title: 'Audioprótesis: Enfoque Médico Fonoaudiológico y Electroacústico', author: 'PASIK, Y.', reason: 'Descatalogado' },
+                    { asignatura: 'TRASTORNOS DE LA AUDICIÓN Y DEL EQUILIBRIO', title: 'Impedancia Acústica: La Medición Como Método Objetivo De La Evaluación Clínico-Audiológica', author: 'LÖKEN, E.', reason: 'Descatalogado' },
+                    { asignatura: 'INTERVENCIÓN FONOAUDIOLÓGICA EN AUDICIÓN Y EQUILIBRIO II (A+S)', title: 'Implantes Cocleares', author: 'MANRIQUE, Manuel y Huarte, Alicia.', reason: 'Descatalogado' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'PRÁCTICA PROFESIONAL I (EV. CICLO)', title: 'Disfagia: evaluación y reeducación de los trastornos de la deglución', author: 'BLEECKX, Didier', reason: 'Descatalogado' },
+                    { asignatura: 'TRASTORNOS DE LA AUDICIÓN Y DEL EQUILIBRIO', title: 'El sistema vestibular y sus alteraciones Tomo II: Patología', author: 'BARTUAL, J.', reason: 'Descatalogado' },
+                    { asignatura: 'LINGÜÍSTICA GENERAL I', title: 'Fonética y fonología', author: 'OBEDIENTE, Enrique', reason: 'Descatalogado' },
+                    { asignatura: 'FUNDAMENTOS DE FONOAUDIOLOGÍA', title: 'Fonoaudiología: historia y proyección', author: 'Escuela de Fonoaudiología', reason: 'No disponible' },
+                    { asignatura: 'INTERVENCIÓN FONOAUDIOLÓGICA EN INFANCIA Y ADOLESCENCIA II', title: 'Grammar intervention', author: 'EISENBERG, Sarita L.', reason: 'No disponible' },
+                    { asignatura: 'INTERVENCIÓN FONOAUDIOLÓGICA EN AUDICIÓN Y EQUILIBRIO II (A+S)', title: 'Método de Lectura Labiofacial para Pacientes con sordera Post-locutiva', author: 'ARROCET, M.', reason: 'No disponible' },
+                    { asignatura: 'NEUROCOGNICIÓN Y PRINCIPIOS DE EVALUACIÓN EN EL ADULTO Y ADULTO MAYOR', title: 'Neuropsicología del lenguaje: funcionamiento normal y patológico, rehabilitación', author: 'JUNQUÉ, C; Bruna O; Mataró, M.', reason: 'Descatalogado' },
+                    { asignatura: 'TRASTORNOS DE LA AUDICIÓN Y DEL EQUILIBRIO', title: 'Otoneurología Clínica', author: 'MORALES, C.', reason: 'No disponible' },
+                    { asignatura: 'FISIOPATOLOGÍA DE LA COMUNICACIÓN', title: 'Otorrinolaringología, Manual Ilustrado', author: 'BECKER, W.; HEINZ, H. y RUDOLF, c.', reason: 'Descatalogado' }
+                ] 
+            },
+            { 
+                faculty: "Facultad de Ciencias de la Salud", 
+                career: "KINESIOLOGÍA", 
+                bbas_unique_percent: 98, 
+                bcom_unique_percent: 98, 
+                bbas_ebooks_percent: 10, 
+                bcom_ebooks_percent: 7, 
+                required_basic: 104, 
+                required_bcom: 113, 
+                existing_basic: 102, 
+                existing_bcom: 111,
+                missing_basic_titles: [
+                    { asignatura: 'TERAPIA POR AGENTES FÍSICOS II', title: 'Agentes Físicos Terapéuticos', author: 'MARTIN, Cordero J.', reason: 'No disponible' },
+                    { asignatura: 'DIAG E INTERV KINESIOLÓGICA II', title: 'Fisioterapia respiratoria en el niño', author: 'Postiaux, Guy', reason: 'Descatalogado' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'TERAPIA POR AGENTES FÍSICOS I', title: 'Agentes Físicos Terapéuticos', author: 'MARTIN, Cordero J.', reason: 'No disponible' },
+                    { asignatura: 'DIAG E INTERV KINESIOLÓGICA I', title: 'Aparato Respiratorio: Fisiología y Clínica', author: 'MENA Cruz E.', reason: 'Descatalogado' }
+                ]
+            },
+            { 
+                faculty: "Facultad de Ciencias de la Salud", 
+                career: "MEDICINA", 
+                bbas_unique_percent: 94, 
+                bcom_unique_percent: 89, 
+                bbas_ebooks_percent: 36, 
+                bcom_ebooks_percent: 33, 
+                required_basic: 116, 
+                required_bcom: 150, 
+                existing_basic: 109, 
+                existing_bcom: 134,
+                missing_basic_titles: [
+                    { asignatura: 'SALUD COMUNITARIA Y FAMILIAR I', title: 'Atención Primaria De La Salud Municipal.', author: 'PUBLILEY Ediciones.', reason: 'No disponible' },
+                    { asignatura: 'ANTROPOLOGÍA', title: 'Enfermedad, cultura y sociedad', author: 'Comelles, Josep', reason: 'Descatalogado' },
+                    { asignatura: 'INTEGRADO DE MORFOLOGÍA II', title: 'Histología Básica. ISBN 9788490866606', author: 'GARTNER, Leslie P. y HIATT, James L.', reason: 'Compra 2025' },
+                    { asignatura: 'BIOETICA', title: 'La Confidencialidad De La Práctica Clínica: Historia Clínica Y Gestión De La Información', author: 'JDEZA, J. et. al.', reason: 'No disponible' },
+                    { asignatura: 'INTERNADO DE MEDICINA FAMILIAR Y RURAL', title: 'Orientación Familiar En Atención Primaria', author: 'MCDANIEL, Susan; CAMPBELL, Thomas y SEABURN, D.', reason: 'Compra 2025' },
+                    { asignatura: 'INTERNADO DE PEDIATRÍA Y CIRUGÍA INFANTIL', title: 'Pediatría', author: 'Rizzardini, Mafalda', reason: 'Descatalogado' },
+                    { asignatura: 'SALUD MENTAL, PSICOPATOLOGÍA Y PSIQUIATRÍA', title: 'Psiquiatría clínica', author: 'Heerlein, Andres', reason: 'Descatalogado' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'INTRODUCCIÓN A LA MEDICINA', title: 'Bicentenario, 200 años de Medicina en Chile', author: 'LABORATORIO CHILE', reason: 'No disponible' },
+                    { asignatura: 'GESTIÓN Y ADMINISTRACIÓN EN SALUD', title: 'El médico de familia y la salud familiar', author: 'Mansilla, Carlos', reason: 'No disponible' },
+                    { asignatura: 'INTERNADO DE PEDIATRÍA Y CIRUGÍA INFANTIL', title: 'Enfermedades infecciosas en pediatría', author: 'Banfi, Antonio', reason: 'Descatalogado' },
+                    { asignatura: 'ANTROPOLOGÍA', title: 'Ensayos de antropología cultural', author: 'Martínez, Ángel', reason: 'Descatalogado' },
+                    { asignatura: 'INTERNADO DE ESPECIALIDADES QUIRÚRGICAS', title: 'Manual de ATLS', author: '', reason: 'No disponible' },
+                    { asignatura: 'INTERNADO DE GINECOLOGÍA Y OBSTETRICIA', title: 'Manual de obstetricia y ginecología', author: 'Carvajal, Jorge', reason: 'No disponible' },
+                    { asignatura: 'MEDICINA LEGAL', title: 'Medicina legal judicial', author: 'Simonin, Camilo', reason: 'Descatalogado' },
+                    { asignatura: 'ANTROPOLOGÍA', title: 'Mujeres : espejos y fragmentos : antropología del género y salud en el Chile del siglo XXI', author: 'Montecino Aguirre, Sonia', reason: 'Descatalogado' },
+                    { asignatura: 'INTERNADO DE GINECOLOGÍA Y OBSTETRICIA', title: 'Oncología Ginecológica', author: 'CABRERA Ditzel, Jorge', reason: 'No disponible' },
+                    { asignatura: 'ONCOLOGÍA Y CUIDADOS PALIATIVOS', title: 'Paliación y Cáncer', author: 'AGAMEZ, Claudio; ÁLVAREZ, Remando y MERA, Juan Carlos', reason: 'No disponible' },
+                    { asignatura: 'PSICOLOGIA DE LA SALUD', title: 'Psicología De La Salud', author: 'BARRA ALMAGIA, Enrique.', reason: 'Descatalogado' },
+                    { asignatura: 'SALUD MENTAL, PSICOPATOLOGÍA Y PSIQUIATRÍA', title: 'Psiquiatría del niño y el adolescente.', author: 'Parmelee, D.', reason: 'Descatalogado' },
+                    { asignatura: 'SALUD MENTAL, PSICOPATOLOGÍA Y PSIQUIATRÍA', title: 'Psiquiatría y salud mental', author: 'Riquelme, R.', reason: 'Descatalogado' },
+                    { asignatura: 'GENETICA MÉDICA', title: 'Teoría y Problemas de Genética', author: 'STANSFIELD, William.', reason: 'Descatalogado' }
+                ] 
+            },
+            { 
+                faculty: "Facultad de Ciencias de la Salud", 
+                career: "NUTRICIÓN Y DIETÉTICA", 
+                bbas_unique_percent: 93, 
+                bcom_unique_percent: 94, 
+                bbas_ebooks_percent: 8, 
+                bcom_ebooks_percent: 6, 
+                required_basic: 103, 
+                required_bcom: 139, 
+                existing_basic: 96, 
+                existing_bcom: 131,
+                 missing_basic_titles: [
+                    { asignatura: 'ADM. DE EMPRESAS DE ALIMENTOS', title: 'Administración de alimentos a colectividades y servicios de salud', author: 'GUERRERO, Ramo C.', reason: 'Descatalogado' },
+                    { asignatura: 'ORIENTACIÓN PROFESIONAL', title: 'De la dietista al nutricionista: 50 años de una profesión', author: 'BOJ, Teresa', reason: 'No disponible' },
+                    { asignatura: 'ELECTIVO DE RESPONSABILIDAD SOCIAL: MEDIO AMBIENTE Y DESARROLLO SOSTENIB', title: 'Ecología: El Puente Entre Ciencia Y Sociedad.', author: 'ODUM, S.', reason: 'Descatalogado' },
+                    { asignatura: 'PRINCIPIOS EN ECONOMÍA Y ADMINISTRACIÓN', title: 'Economía Salud: Aportes Y Experiencias En América Latina.', author: 'ARTAZA, O.', reason: 'No disponible' },
+                    { asignatura: 'ELECTIVO DE ÉTICA: ETICA Y SOCIEDAD: UNA MIRADA ACTUAL', title: 'Ética General.', author: 'VIGO, A.', reason: 'Descatalogado' },
+                    { asignatura: 'VALORACIÓN NUTRICIONAL II', title: 'Evaluación nutricional del paciente hospitalizado', author: 'FELANPE', reason: 'No disponible' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'ASEG. CALID E INOCUID ALIMEN II', title: '9001:2018 Sistemas de gestión de la calidad-Requisitos.', author: 'Instituto Nacional de Normalización', reason: 'Compra 2025' },
+                    { asignatura: 'PLANIFICACIÓN ALIMENTARIA II', title: 'Apuntes para la historia de la cocina chilena', author: 'PEREIRA, Eugenio', reason: 'Compra 2025' },
+                    { asignatura: 'DIETOTERAPIA DEL ADULTO II', title: 'Dietética y Nutrición: Manual de la Clínica', author: 'Nelson-Moxness -M. Jensen- C. Gsatine', reason: 'No disponible' },
+                    { asignatura: 'PRINCIPIOS EN ECONOMÍA Y ADMINISTRACIÓN', title: 'El Campo Y Método De La Economía. Versión Española De Fernando Carmona De La R', author: 'LANGE, Oscar.', reason: 'No disponible' },
+                    { asignatura: 'DIRECCIÓN DE PERSONAS', title: 'Ingeniería de las competencias', author: 'LEBOTERF, Guy', reason: 'Descatalogado' },
+                    { asignatura: 'ASEG. CALID E INOCUID ALIMEN II', title: 'ISO 22000:2018 Sistemas de Gestión de Seguridad Alimentaria', author: 'Instituto Nacional de Normalización', reason: 'Compra 2025' },
+                    { asignatura: 'SALUD PÚBLICA Y NUTRICIÓN', title: 'Transición epidemiológica en América Latina. Rev. Méd. Chile: 1997', author: 'Albala Brevis, Cecilia', reason: 'Descatalogado' }
+                ]
+            },
+            { 
+                faculty: "Facultad de Ciencias de la Salud", 
+                career: "OBSTETRICIA Y PUERICULTURA", 
+                bbas_unique_percent: 97, 
+                bcom_unique_percent: 97, 
+                bbas_ebooks_percent: 9, 
+                bcom_ebooks_percent: 10, 
+                required_basic: 88, 
+                required_bcom: 92, 
+                existing_basic: 85, 
+                existing_bcom: 89,
+                missing_basic_titles: [
+                    { asignatura: 'ENFERMERÍA MÉDICO-QUIRÚRGICO', title: 'Guía Apoyo Enfermería Médico Quirúrgico: Teoría, Práctica Y Laboratorio', author: 'FERNÁNDEZ, M., J.J.', reason: 'No disponible' },
+                    { asignatura: 'BIOETICA', title: 'Investigación en salud, dimensión ética', author: 'LOLAS, Fernando', reason: 'Descatalogado' },
+                    { asignatura: 'GESTIÓN EN SALUD Y CALIDAD', title: 'Seguridad Del Paciente Hospitalizado.', author: 'RUELAS BARAJAS, E., SARAHA GONZÁLEZ, O.', reason: 'Descatalogado' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'CLÍNICA ENFERMERÍA MÉDICO QUIRÚRGICO', title: 'Guía De Apoyo Electrocardiografía Básica SVA/BILS', author: 'FERNÁNDEZ, J.', reason: 'No disponible' }
+                ]
+            },
+            { 
+                faculty: "Facultad de Ciencias de la Salud", 
+                career: "QUÍMICA Y FARMACIA", 
+                bbas_unique_percent: 94, 
+                bcom_unique_percent: 94, 
+                bbas_ebooks_percent: 11, 
+                bcom_ebooks_percent: 10, 
+                required_basic: 89, 
+                required_bcom: 100, 
+                existing_basic: 84, 
+                existing_bcom: 94,
+                missing_basic_titles: [
+                    { asignatura: 'EPIDEMIOLOGÍA', title: 'Epidemiología Sin Números.', author: 'ALMEIDA N.', reason: 'No disponible' },
+                    { asignatura: 'EVOLUCIÓN DE LOS MEDICAMENTOS', title: 'Historia de la farmacia: Los medicamentos, la riqueza y el bienestar', author: 'ESTEVA DE SAGRERA, Juan.', reason: 'Descatalogado' },
+                    { asignatura: 'TECNOLOGÍA FARMACÉUTICA I', title: 'Pharmacopeia & National Formulary 2018 (Usp 41-Nf 36)', author: 'UNITED STATES PHARMACOPEIA & NATIONAL FORMULARY', reason: 'Compra 2025' },
+                    { asignatura: 'SALUD PÚBLICA', title: 'Public Health And Pharmacy: A Critical Review.', author: 'JESSON J, Bissell P.', reason: 'No disponible' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'FARMACOLOGÍA', title: 'Clinical Pharmacology and Therapeutics', author: '', reason: 'Compra 2025' },
+                    { asignatura: 'TECNOLOGÍA COSMÉTICA', title: 'Dermatología Cosmética', author: 'SERRANO ORTEGA S., SOTO DE DELÁS J., MORENO, J.C.', reason: 'Descatalogado' },
+                    { asignatura: 'FARMACOVIGILANCIA', title: 'Los primeros 25 años del sistema español de farmacovigilancia de medicamentos de uso humano (1982-2007)', author: 'MANSO G., HIDALGO A., CARVAJAL A., DE ABAJO F.J.', reason: 'No disponible' },
+                    { asignatura: 'QUÍMICA ANALÍTICA', title: 'Química Analítica', author: 'GARY, Christian.', reason: 'Descatalogado' },
+                    { asignatura: 'QUÍMICA INORGÁNICA', title: 'Química Inorgánica Descriptiva', author: 'RAYNER-CANHAM, Geoff.', reason: 'Descatalogado' },
+                    { asignatura: 'FARMACOLOGÍA', title: 'The Annals of Pharmacotherapy', author: '', reason: 'No disponible' }
+                ]
+            },
+            { 
+                faculty: "Facultad de Ciencias de la Salud", 
+                career: "TERAPIA OCUPACIONAL", 
+                bbas_unique_percent: 96, 
+                bcom_unique_percent: 96, 
+                bbas_ebooks_percent: 5, 
+                bcom_ebooks_percent: 5, 
+                required_basic: 112, 
+                required_bcom: 132, 
+                existing_basic: 107, 
+                existing_bcom: 127,
+                missing_basic_titles: [
+                    { asignatura: 'AYUDAS TÉCNICAS Y TECNOLOGÍAS DE APOYO III', title: 'Domótica: Los Mejores Trucos', author: 'MEYER, GORDON.', reason: 'Descatalogado' },
+                    { asignatura: 'INTERVENCIÓN EN SALUD MENTAL INFANTO JUVENIL', title: 'La Clasificación Diagnóstica sobre la Salud Mental y los Trastornos del Desarrollo', author: '', reason: 'Descatalogado' },
+                    { asignatura: 'PSICOPATOLOGÍA DEL ADULTO', title: 'La Esquizofrenia De Kraepelin Al Dsm-V.', author: 'SILVA, H.', reason: 'Descatalogado' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'PRÁCTICA PROFESIONAL IV (EV. CICLO)', title: 'Componentes del desarrollo motor normal durante el primer año de vida y desarrollo', author: 'BLY, Lois', reason: 'No disponible' },
+                    { asignatura: 'PRÁCTICA PROFESIONAL IV (EV. CICLO)', title: 'Gerontología y geriatría', author: 'LLANGAICA SALAZAR, RAQUEL and SANCHEZ O', reason: 'Descatalogado' },
+                    { asignatura: 'INTERVENCIÓN EN SALUD MENTAL ADULTO', title: 'La liberación de los pacientes psiquiátricos. De la rehabilitación psicosocial a la ciudad', author: 'SARACENO, B.', reason: 'Descatalogado' },
+                    { asignatura: 'AYUDAS TÉCNICAS Y TECNOLOGÍAS DE APOYO III', title: 'Lesión de tendones flexores de la Mano, Protocolos de tratamiento, intervención de', author: 'LARA, Juan', reason: 'No disponible' },
+                    { asignatura: 'PRÁCTICA PROFESIONAL IV (EV. CICLO)', title: 'Terapia ocupacional en Alzheimer y otras demencias', author: 'REDONDO GARCÉS, ÁLVARO', reason: 'No disponible' }
+                ]
+            },
             // Facultad de Ciencias Sociales y Humanidades
-            { faculty: "Facultad de Ciencias Sociales y Humanidades", career: "PSICOLOGÍA", bbas_unique_percent: 98, bcom_unique_percent: 93, bbas_ebooks_percent: 42, bcom_ebooks_percent: 46, required_basic: 131, required_bcom: 177, existing_basic: 129, existing_bcom: 165 },
-            { faculty: "Facultad de Ciencias Sociales y Humanidades", career: "ADMINISTRACIÓN PÚBLICA", bbas_unique_percent: 94, bcom_unique_percent: 91, bbas_ebooks_percent: 61, bcom_ebooks_percent: 59, required_basic: 137, required_bcom: 219, existing_basic: 129, existing_bcom: 200 },
-            { faculty: "Facultad de Ciencias Sociales y Humanidades", career: "PERIODISMO", bbas_unique_percent: 95, bcom_unique_percent: 92, bbas_ebooks_percent: 37, bcom_ebooks_percent: 46, required_basic: 136, required_bcom: 140, existing_basic: 129, existing_bcom: 129 },
-            { faculty: "Facultad de Ciencias Sociales y Humanidades", career: "PUBLICIDAD PROFESIONAL Y COMUNICACIÓN INTEGRAL", bbas_unique_percent: 93, bcom_unique_percent: 87, bbas_ebooks_percent: 30, bcom_ebooks_percent: 26, required_basic: 99, required_bcom: 137, existing_basic: 92, existing_bcom: 119 },
-            { faculty: "Facultad de Ciencias Sociales y Humanidades", career: "TRABAJO SOCIAL", bbas_unique_percent: 94, bcom_unique_percent: 97, bbas_ebooks_percent: 47, bcom_ebooks_percent: 54, required_basic: 113, required_bcom: 159, existing_basic: 106, existing_bcom: 154 },
+            { 
+                faculty: "Facultad de Ciencias Sociales y Humanidades", 
+                career: "PSICOLOGÍA", 
+                bbas_unique_percent: 98, 
+                bcom_unique_percent: 93, 
+                bbas_ebooks_percent: 42, 
+                bcom_ebooks_percent: 46, 
+                required_basic: 131, 
+                required_bcom: 177, 
+                existing_basic: 129, 
+                existing_bcom: 165,
+                missing_basic_titles: [
+                    { asignatura: 'TALLER DE HABILIDADES PROFESIONALES I', title: 'Taller de Desarrollo Interpersonal', author: 'VARAS, Patricio', reason: 'No disponible' },
+                    { asignatura: 'TEORÍAS PSICOLÓGICAS II', title: 'Terapias de tercera generación: Guías de intervención y perfiles de investigación en la actualidad', author: 'MATTIASOLO, Eva. I., WAGNER, Jorge.', reason: 'Compra 2025' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'METODOLOGÍA Y ANÁLISIS DE DATOS CUANTITATIVOS', title: 'Introducción al análisis de datos cuantitativos en ciencias sociales', author: 'Martínez-Hernández, Heriberto', reason: 'Compra 2025' },
+                    { asignatura: 'INTERVENCIÓN CLÍNICA ADULTO', title: 'Psicoterapia y terapia Gestalt', author: 'MULLER-FRANK, OTTO y MÜLLER-GRANZOTTO, K.', reason: 'Descatalogado' },
+                    { asignatura: 'ENTOMOLOGÍA APLICADA A LA PSICOLOGÍA', title: 'La Semiometría de la Ciencia Sociales', author: 'BAENA, Sigmund', reason: 'Descatalogado' },
+                    { asignatura: 'PSICODIAGNÓSTICO ADULTO', title: 'Apuntes de psicopatología', author: 'LUNALDE-BIANCHI, Helena', reason: 'No disponible' },
+                    { asignatura: 'PSICODIAGNÓSTICO ADULTO', title: 'Comprensión psicodinámica de los estilos de la personalidad', author: 'RAPAPORT, (S) NORA, Carolina', reason: 'No disponible' },
+                    { asignatura: 'INTERVENCIÓN CLÍNICA ADULTO', title: 'Procedimientos de intervención sobre las perversiones epistemológicas', author: 'GOMEZ, P. E.', reason: 'No disponible' },
+                    { asignatura: 'FUNDAMENTOS NEUROANATÓMICOS Y FUNCIONALES DEL SISTEMA NERVIOSO', title: 'Psicofisiología', author: 'MAKI, James', reason: 'Descatalogado' },
+                    { asignatura: 'INTERVENCIÓN CLÍNICA INFANTIL JUVENIL', title: 'Psicoterapia infantil: Manual, subjetivación y normatividad relacional', author: 'MORALES, German y DUARTE, Carmen', reason: 'No disponible' },
+                    { asignatura: 'PSICODIAGNÓSTICO ADULTO', title: 'Referencia al enfoque psicodiagnóstico', author: 'GARCIA ARZENI, María Ester', reason: 'Descatalogado' },
+                    { asignatura: 'PSICODIAGNÓSTICO INFANTO JUVENIL', title: 'Test de psicología infantil (y juvenil)', author: 'ABETO, Laura; PÉREZ, Mónica', reason: 'Compra 2025' },
+                    { asignatura: 'TEORÍAS PSICOLÓGICAS II', title: 'Terapia orientada a la solución más allá de la solución de trastornos con hormonas y a relaciones terapéuticas', author: 'UPCAR, Sue', reason: 'Descatalogado' },
+                    { asignatura: 'PSICODIAGNÓSTICO INFANTO JUVENIL', title: 'Trastornos de Personalidad: hacia una mirada integral', author: 'RIQUELME, R.', reason: 'Descatalogado' }
+                ] 
+            },
+            { 
+                faculty: "Facultad de Ciencias Sociales y Humanidades", 
+                career: "ADMINISTRACIÓN PÚBLICA", 
+                bbas_unique_percent: 94, 
+                bcom_unique_percent: 91, 
+                bbas_ebooks_percent: 61, 
+                bcom_ebooks_percent: 59, 
+                required_basic: 137, 
+                required_bcom: 219, 
+                existing_basic: 129, 
+                existing_bcom: 200,
+                missing_basic_titles: [
+                    { asignatura: 'ÉTICA Y PROBIDAD PÚBLICA', title: 'The Ethics of Public Service for the 21st Century', author: 'Geuras, Humberto', reason: 'No Disponible' },
+                    { asignatura: 'DERECHO ADMINISTRATIVO III', title: 'El Control De Actos Administrativos Del Estado', author: 'CORDERO, Luis', reason: 'Descatalogado' },
+                    { asignatura: 'GOBIERNO Y GESTION DE LOS RIESGOS DE DESASTRES', title: 'Gobernanza De Los Riesgos De Desastres, Informe Final', author: 'Chronic, Fenimore', reason: 'Descatalogado' },
+                    { asignatura: 'MOTOR DE LA ESTADÍSTICA DESCRIPTIVA', title: 'Estadística Aplicada a Los Negocios Y la Economia', author: 'Weiers, Allen', reason: 'Descatalogado' },
+                    { asignatura: 'ELEMENTOS DE DERECHO', title: 'Teoría Del Gobierno : Derecho y Estado', author: 'Llas Spina, Jose Luis', reason: 'Descatalogado' },
+                    { asignatura: 'DIRECCIÓN Y TOMA DE DECISIONES', title: 'Análisis de Decisiones Según el Modelo de las Políticas Públicas. Cuaderno de la División de Decisiones Vol. I.', author: 'CONFE', reason: 'No disponible' },
+                    { asignatura: 'DIRECCIÓN Y TOMA DE DECISIONES', title: 'Guía Del Accionar Racional e Irracionalidad Limitada. Cuaderno de la División de Decisiones Vol. II', author: 'CONFE', reason: 'No disponible' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'POLÍTICAS PÚBLICAS', title: 'Tratado de análisis de las políticas públicas', author: 'Saunier, Paul', reason: 'Compra 2025' },
+                    { asignatura: 'CONTROL DE GESTIÓN', title: 'Casos en la administración pública: Capítulo IX. El puente entre la incertidumbre y la rentabilidad', author: 'Drafna, Jai M', reason: 'Descatalogado' },
+                    { asignatura: 'GESTIÓN DE PROCESOS', title: 'Enfoques de modelado procesal', author: 'WESEL, David C.', reason: 'Descatalogado' },
+                    { asignatura: 'DERECHO CONSTITUCIONAL', title: 'Instituciones políticas: casos constitucional', author: 'NOGUEIRA H., LOMBO L.', reason: 'Descatalogado' },
+                    { asignatura: 'GESTIÓN DE PERSONAS', title: 'La libertad, elección en una era incierta', author: 'LARIOS, Richard', reason: 'Descatalogado' },
+                    { asignatura: 'DERECHO ADMINISTRATIVO I', title: 'Lejic 19.080. sobre Procedimiento Administrativo. ¿Adversidad o muerte?', author: 'Castro Meza, Eduardo', reason: 'Descatalogado' },
+                    { asignatura: 'POLÍTICAS PÚBLICAS', title: 'La política', author: 'VERNE, J. y OTEGUI, L.', reason: 'Descatalogado' },
+                    { asignatura: 'POLÍTICAS PÚBLICAS', title: 'Políticas públicas y agenda de gobierno', author: 'AGUILA. A. y CIERPE. C.', reason: 'Descatalogado' },
+                    { asignatura: 'ESPECIALIDAD I', title: 'REINVENTAR la gestión pública local. Acercamiento al ciudadano. Evaluación y control de las políticas públicas', author: 'Ayuntamiento De Barcelona', reason: 'Descatalogado' },
+                    { asignatura: 'DERECHO ADMINISTRATIVO I', title: 'Tratado de Derecho Administrativo. La Actividad Formal de la Administración del Estado', author: 'Vergara Blanco, Claudio', reason: 'Descatalogado' },
+                    { asignatura: 'GOBIERNO Y ADMINISTRACIÓN LOCAL', title: 'Lecciones de derecho de descentralización de Chile', author: 'ESTEGER, Leonardo', reason: 'No disponible' },
+                    { asignatura: 'GESTIÓN DE INSTITUCIONES Y MERCADOS REGULADOS', title: 'Gobernanza y nueva gestión pública: capítulo 19. El análisis de la intervención del Estado en el sistema financiero: análisis del papel de la economía procedente del sector informal', author: 'DE LA FUENTE, Farina', reason: 'No disponible' },
+                    { asignatura: 'GERENCIA PÚBLICA I', title: 'Caminos a la moneda. La evolución presupuestaria de Chile de 1925 - 2000', author: 'SAN FRANCISCO, Alejandro (CD) [Colegial]', reason: 'No disponible' },
+                    { asignatura: 'ESPECIALIDAD III', title: 'Estudios presupuestarios de hacienda en Iberoamérica. La comparabilidad de los planes de América Latina', author: 'Berrios, Hadel', reason: 'No disponible' },
+                    { asignatura: 'GESTIÓN DEL DESARROLLO ORGANIZACIONAL', title: 'Gobierno progresista', author: 'MARIN Y Navarrete, Hernán', reason: 'No disponible' },
+                    { asignatura: 'ADMINISTRACIÓN PÚBLICA CHILENA', title: 'La Contraloría General de la República: libro de la vida institucional. Capítulo IV. La administración del Estado en Chile: un concepto monótono', author: 'Contraloría General de la República', reason: 'No disponible' },
+                    { asignatura: 'DERECHO ADMINISTRATIVO III', title: 'El principio de protección de la confianza en la jurisprudencia del Tribunal Constitucional. El caso de los titulares de la administración pública y su declaración jurada de patrimonio e intereses', author: 'SOTO NAVARRO, R.', reason: 'No disponible' },
+                    { asignatura: 'DERECHOS SOCIAL, TRABAJO Y SEGURIDAD SOCIAL', title: 'El fin del principio de seguridad pública y su alcance en la realidad', author: 'MARTÍN, Daniela', reason: 'No disponible' }
+                ]
+            },
+            { 
+                faculty: "Facultad de Ciencias Sociales y Humanidades", 
+                career: "PERIODISMO", 
+                bbas_unique_percent: 95, 
+                bcom_unique_percent: 92, 
+                bbas_ebooks_percent: 37, 
+                bcom_ebooks_percent: 46, 
+                required_basic: 136, 
+                required_bcom: 140, 
+                existing_basic: 129, 
+                existing_bcom: 129,
+                missing_basic_titles: [
+                    { asignatura: 'TALLER DE CONVERGENCIA DIGITAL', title: 'El nuevo poder de las audiencias en las redes sociales', author: 'Arriagada, Orlando', reason: 'Compra 2025' },
+                    { asignatura: 'SEMIÓTICA', title: 'Información, Fragmento Y Representación', author: 'INFANTE MELO, GUEVARA Y CALDERON', reason: 'Descatalogado' },
+                    { asignatura: 'NARRACIÓN PERIODÍSTICA', title: 'Los parámetros sobre cómo contar buenas historias', author: 'CINTORA, María Gemma; FERVÍC, Fabiola', reason: 'Descatalogado' },
+                    { asignatura: 'NARRACIÓN INTERACTIVA', title: 'La representación de la verdad: cuestiones y convenciones sobre el documental', author: 'Nichols, Bill', reason: 'Descatalogado' },
+                    { asignatura: 'OPTATIVO DE PROFUNDIZACIÓN EN INVESTIGACIÓN', title: 'Montajes nominales', author: 'Gallaste, David', reason: 'Descatalogado' },
+                    { asignatura: 'ORGANIZACIÓN REDACCIONAL (A+S)', title: 'Comunicación y cultura de masas', author: 'Ulibarri, César', reason: 'No disponible' },
+                    { asignatura: 'PRÁCTICA PROFESIONAL', title: 'Reglamento del Taller Profesional de la Carrera de Periodismo de la Facultad de Ciencias Sociales y Humanidades de la Universidad Autónoma de Chile', author: 'Facultad de Ciencias Sociales y Humanidades, Universidad Autónoma de Chile', reason: 'No disponible' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'OPTATIVO DE PERIODISMO ESPECIALIZADO EN INVESTIGACIÓN PERIODÍSTICA', title: 'La gran conspiración del 2006: el complot de seguir adelante con la carrera de la UDI en el PENTA', author: 'Gajardo B, Paulina', reason: 'Compra 2025' },
+                    { asignatura: 'SEMIÓTICA', title: 'La casa de la semiótica', author: 'PEIRCE, Charles Sanders', reason: 'Compra 2025' },
+                    { asignatura: 'HISTORIA POLÍTICA Y SOCIAL DE CHILE', title: 'Historia y desarrollo de la clase media en Chile', author: 'Cerda, César', reason: 'No disponible' },
+                    { asignatura: 'SEMIÓTICA', title: 'La semiótica de la intersubjetividad. La perspectiva del Dr. Vilma', author: 'BROWN, Medrano, Jorge', reason: 'No disponible' },
+                    { asignatura: 'HERRAMIENTAS DIGITALES IV', title: 'Las mejores políticas de redes sociales para empresas que usan Instagram y casos de éxito', author: 'Jimenez, Fernando', reason: 'No disponible' },
+                    { asignatura: 'OPTATIVO DE PERIODISMO ESPECIALIZADO EN COMUNICACIÓN POLÍTICA', title: 'La poliarquía', author: 'Caimi, Zulema', reason: 'Película' },
+                    { asignatura: 'OPTATIVO DE PERIODISMO ESPECIALIZADO EN INVESTIGACIÓN PERIODÍSTICA', title: 'Los archivos del cardenal', author: '', reason: 'Película' },
+                    { asignatura: 'TALLER DE PERIODISMO EN TELEVISIÓN', title: 'Narrativas de los nuevos medios', author: 'Morales, R.', reason: 'No disponible' },
+                    { asignatura: 'TALLER DE CONVERGENCIA DIGITAL', title: 'Narrativas transmedia', author: 'Orozco, Carlos Alberto', reason: 'Compra 2025' },
+                    { asignatura: 'OPTATIVO DE PERIODISMO ESPECIALIZADO EN COMUNICACIÓN POLÍTICA', title: 'No', author: 'Larraín, Pablo', reason: 'Película' },
+                    { asignatura: 'OPINIÓN PÚBLICA', title: 'Periodismo, opinión pública y agenda ciudadana', author: 'Miralles A.M.', reason: 'No disponible' }
+                ]
+            },
+            { 
+                faculty: "Facultad de Ciencias Sociales y Humanidades", 
+                career: "PUBLICIDAD PROFESIONAL Y COMUNICACIÓN INTEGRAL", 
+                bbas_unique_percent: 93, 
+                bcom_unique_percent: 87, 
+                bbas_ebooks_percent: 30, 
+                bcom_ebooks_percent: 26, 
+                required_basic: 99, 
+                required_bcom: 137, 
+                existing_basic: 92, 
+                existing_bcom: 119,
+                missing_basic_titles: [
+                    { asignatura: 'PLATAFORMA DIGITAL', title: 'Estrategia Digital', author: 'DAHON, Leandro', reason: 'Compra 2025' },
+                    { asignatura: 'TALLER DE CONVERGENCIA DIGITAL', title: 'Lenguajes Digitales', author: 'SNEIDER, Mark', reason: 'Compra 2025' },
+                    { asignatura: 'COMUNICACIÓN POLÍTICA', title: 'Communication in Internet: Strategies for Marketing Communication in universities', author: 'Calvo Fernandez, Sergio', reason: 'Descatalogado' },
+                    { asignatura: 'DISEÑO GRÁFICO', title: 'Tipografía con retícula', author: 'Swansea, Timothy', reason: 'Descatalogado' },
+                    { asignatura: 'MARKETING RELACIONAL (A+S)', title: 'Gestión del marketing social', author: 'URIAZEL A.', reason: 'Descatalogado' },
+                    { asignatura: 'GERENCIA Y TRADE MARKETING', title: 'Gestión de Categorías y Trade Marketing', author: 'DANTAS MORAES, Antonio', reason: 'Descatalogado' },
+                    { asignatura: 'IDENTIDAD PUBLICITARIA', title: 'Semiología de la publicidad: el caso de Skey, Barrera, Ramírez, Dávila, Hahn', author: 'Cherretón, Victorino', reason: 'Descatalogado' },
+                    { asignatura: 'CONCEPTUALIZACIÓN PUBLICITARIA', title: 'Pospublicidad.', author: 'SCOLARI, Daniel', reason: 'Agotado' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'MARKETING RELACIONAL', title: 'CRM Sales Marketing for the 21st Century Executive Implementation Strategies for Customer Relationship Management', author: 'Hedges, Dion', reason: 'Compra 2025' },
+                    { asignatura: 'MARKETING ESTRATÉGICO I', title: 'Del cartel de propaganda a las redes sociales: El uso de las redes sociales por parte de los políticos', author: 'WHEN, Paul', reason: 'Compra 2025' },
+                    { asignatura: 'INVESTIGACIÓN EN EL MERCADO', title: 'Control cualitativo del mercado: desarrollo y utilización del concepto en la economía de la PYME', author: 'MARKS, BOB E.', reason: 'Descatalogado' },
+                    { asignatura: 'TALLER DE CONVERGENCIA DIGITAL', title: 'Diseño digital: servicios asociados a micro y socio-territorios desig', author: 'TIVÁ, Supervisor, Luis', reason: 'Descatalogado' },
+                    { asignatura: 'GESTIÓN DE LA COMUNICACIÓN', title: 'Persuasión en el lenguaje', author: 'SERSEN, Benjamin C.', reason: 'Descatalogado' },
+                    { asignatura: 'TEORÍA DE LA PUBLICIDAD', title: 'El fin de la publicidad como la conocemos', author: 'ZAMA, Sergio', reason: 'Descatalogado' },
+                    { asignatura: 'PLATAFORMA DIGITAL', title: 'La prensa en la Gutenberg', author: 'TORRIJOS, Jean-Etienne', reason: 'Descatalogado' },
+                    { asignatura: 'GESTIÓN MARKETING', title: 'Marketing Relacional', author: 'HU, San. INFAN, Eberm.', reason: 'Descatalogado' },
+                    { asignatura: 'PLATAFORMA DIGITAL', title: 'Descubrimiento de medios digitales', author: 'DAHON, Leandro', reason: 'No disponible' },
+                    { asignatura: 'MARKETING RELACIONAL', title: 'El 80/20 del Big Data and Organizational Change in the Oil y Gas and the World', author: 'COLLI', reason: 'No disponible' },
+                    { asignatura: 'MARKETING RELACIONAL', title: 'El nuevo marketing. Estrategias cualitativas en el fuerte.', author: 'ROBIRA F, Josep', reason: 'No disponible' },
+                    { asignatura: 'TEORÍA DE LA PUBLICIDAD', title: 'El branding emocional: el eslabón perdido entre la marca y el consumidor', author: 'CARE', reason: 'No disponible' },
+                    { asignatura: 'MARKETING OPERATIVO', title: 'Marketing. El motor del negocio. Hacia nuevas ventas.', author: 'English, Javier M.', reason: 'No disponible' },
+                    { asignatura: 'CONCEPTUALIZACIÓN PUBLICITARIA', title: 'El 80/20 de Ogilvy & Mather en Madison Avenue', author: 'KENNER, Ronan', reason: 'Compra 2025' },
+                    { asignatura: 'CREDIBILIDAD ESTRATÉGICA', title: 'Publicidad Exterior: Técnicas de investigación al servicio del anunciante y propuestas de intervenciones', author: 'PROGEN, Mario', reason: 'No disponible' },
+                    { asignatura: 'METODOLOGÍA DE LA INVESTIGACIÓN SOCIAL', title: 'Técnicas y medios de investigación', author: 'Santos, Ruth', reason: 'No disponible' },
+                    { asignatura: 'GERENCIA PUBLICITARIA', title: 'Trayectorias en servicios de salud y bienestar', author: 'Villar Muñoz, Rafael del.', reason: 'Descatalogado' }
+                ]
+            },
+            { 
+                faculty: "Facultad de Ciencias Sociales y Humanidades", 
+                career: "TRABAJO SOCIAL", 
+                bbas_unique_percent: 94, 
+                bcom_unique_percent: 97, 
+                bbas_ebooks_percent: 47, 
+                bcom_ebooks_percent: 54, 
+                required_basic: 113, 
+                required_bcom: 159, 
+                existing_basic: 106, 
+                existing_bcom: 154,
+                missing_basic_titles: [
+                    { asignatura: 'POLÍTICA PÚBLICA E INTERVENCIÓN SOCIAL', title: 'Análisis Del Diseño De Políticas Públicas.', author: 'SUBIRATS, Joan; KLIJN, E. y KOPPENJAN, J.', reason: 'Descatalogado' },
+                    { asignatura: 'OPTATIVO DE ESPECIALIDAD V: TALLER DE REGULACIÓN PARA LA INTERVENCIÓN SOCIAL', title: 'Del Conflicto a la Conciliación', author: 'MERLANO, Jorge y NEGRET M, César', reason: 'Descatalogado' },
+                    { asignatura: 'OPTATIVO DE ESPECIALIDAD V: TALLER DE REGULACIÓN PARA LA INTERVENCIÓN SOCIAL', title: 'El Oficio del Mediador', author: 'Cortina Ors, Adela', reason: 'Descatalogado' },
+                    { asignatura: 'OPTATIVO DE ESPECIALIDAD VIII: PERITAJE Y CONSTRUCCIÓN DE CIUDADANÍA', title: 'Sistemas históricos', author: 'SCOTT, Joan', reason: 'Descatalogado' },
+                    { asignatura: 'INVESTIGACIÓN SOCIAL', title: 'La articulación de la investigación social: introducción a los Métodos Y su Diversidad', author: 'RUBIN, Charles', reason: 'Descatalogado' },
+                    { asignatura: 'POLÍTICA PÚBLICA E INTERVENCIÓN SOCIAL', title: 'Los Derechos Sociales y el Estado Del Bienestar', author: 'ESPING-ANDERSEN, G.; PALIER, B.', reason: 'Descatalogado' },
+                    { asignatura: 'PROYECTOS SOCIALES II', title: 'Formación Social en el proceso de evaluación de los Programas Sociales', author: 'CORTELAZOR, J.; AMATRIA, I.', reason: 'No disponible' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'OPTATIVO DE PROFUNDIZACIÓN II: ABORDAJE FLIAR: MEDIACIÓN EN TERRITORIOS Y CONFLICTOS EN LA INTERVENCIÓN CONTEMPORÁNEA', title: 'Transformación positiva del conflicto: manual de entrenamiento para mediadores', author: 'SPARKS, G. C.', reason: 'Compra 2025' },
+                    { asignatura: 'TRABAJO SOCIAL Y POLÍTICA PÚBLICA', title: 'Reconfiguración del Estado Social en Chile. El desafío de las políticas de asistencia', author: 'ROJAS, C.', reason: 'Compra 2025' },
+                    { asignatura: 'OPTATIVO DE ESPECIALIDAD V: TALLER DE REGULACIÓN PARA LA INTERVENCIÓN SOCIAL', title: 'La Negociación Racional en un Mundo Irracional', author: 'BAZERMAN, Max. y NEALE, Margaret', reason: 'Descatalogado' },
+                    { asignatura: 'GESTIÓN DE LA DIVERSIDAD', title: 'Diversidad y políticas públicas', author: 'Meneses, Aldo', reason: 'No disponible' },
+                    { asignatura: 'OPTATIVO DE ESPECIALIDAD VIII: PERITAJE Y CONSTRUCCIÓN DE CIUDADANÍA', title: 'Dirección del trabajo en proyectos sociales. Evolución de los fundamentos y paradigmas de la distribución', author: 'HEREDÍA, Daniela', reason: 'No disponible' }
+                ]
+            },
             // Facultad de Derecho
-            { faculty: "Facultad de Derecho", career: "DERECHO", bbas_unique_percent: 97, bcom_unique_percent: 98, bbas_ebooks_percent: 61, bcom_ebooks_percent: 43, required_basic: 113, required_bcom: 126, existing_basic: 110, existing_bcom: 123 },
+            { 
+                faculty: "Facultad de Derecho", 
+                career: "DERECHO", 
+                bbas_unique_percent: 97, 
+                bcom_unique_percent: 98, 
+                bbas_ebooks_percent: 61, 
+                bcom_ebooks_percent: 43, 
+                required_basic: 113, 
+                required_bcom: 126, 
+                existing_basic: 110, 
+                existing_bcom: 123,
+                missing_basic_titles: [
+                    { asignatura: 'OPTATIVO DE ESPECIALIDAD I: DERECHO MUNICIPAL Y POLICIA LOCAL', title: 'El Procedimiento Aplicado Ante Los Juzgados De Policia Local Desde Una Mirada Teórica Y Práctica.', author: 'Ahumada, María', reason: 'Compra 2025' },
+                    { asignatura: 'DERECHO TRIBUTARIO I', title: 'Manual De Derecho Tributario tomo I', author: 'Vergara Wistuba, Carlos', reason: 'Descatalogado' },
+                    { asignatura: 'TALLER DE LITIGACIÓN', title: 'Manual De Proceso Laboral.', author: 'Lanata Fuenzalida, Gabriela', reason: 'Descatalogado' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'DERECHO TRIBUTARIO I', title: 'Manual de Derecho Tributario tomo II', author: 'Vergara Wistuba, Carlos', reason: 'Descatalogado' },
+                    { asignatura: 'METODOLOGÍA DE LA INVESTIGACIÓN JURÍDICA', title: 'Metodología Jurídica', author: 'WITKER, Jorge. LARIOS, Rogelio', reason: 'Descatalogado' },
+                    { asignatura: 'DELITOS EN PARTICULAR II', title: 'Problemas actuales de derecho penal', author: 'Varios Autores', reason: 'Compra 2025' }
+                ]
+            },
             // Facultad de Educación
             { faculty: "Facultad de Educación", career: "LICENCIATURA EN ARTES VISUALES", bbas_unique_percent: 79, bcom_unique_percent: 88, bbas_ebooks_percent: 20, bcom_ebooks_percent: 26, required_basic: 92, required_bcom: 103, existing_basic: 73, existing_bcom: 91 },
             { faculty: "Facultad de Educación", career: "PEDAGOGÍA EN CASTELLANO", bbas_unique_percent: 90, bcom_unique_percent: 89, bbas_ebooks_percent: 36, bcom_ebooks_percent: 40, required_basic: 127, required_bcom: 178, existing_basic: 114, existing_bcom: 158 },
@@ -322,15 +796,126 @@
             { faculty: "Facultad de Educación", career: "PEDAGOGÍA EN INGLÉS", bbas_unique_percent: 95, bcom_unique_percent: 95, bbas_ebooks_percent: 31, bcom_ebooks_percent: 31, required_basic: 106, required_bcom: 127, existing_basic: 101, existing_bcom: 121 },
             { faculty: "Facultad de Educación", career: "PEDAGOGÍA EN EDUCACIÓN PARVULARIA", bbas_unique_percent: 95, bcom_unique_percent: 95, bbas_ebooks_percent: 56, bcom_ebooks_percent: 53, required_basic: 102, required_bcom: 114, existing_basic: 97, existing_bcom: 108 },
             // Facultad de Ingeniería
-            { faculty: "Facultad de Ingeniería", career: "INGENIERÍA CIVIL INDUSTRIAL", bbas_unique_percent: 92, bcom_unique_percent: 94, bbas_ebooks_percent: 43, bcom_ebooks_percent: 46, required_basic: 127, required_bcom: 131, existing_basic: 117, existing_bcom: 123 },
-            { faculty: "Facultad de Ingeniería", career: "INGENIERÍA CIVIL INFORMÁTICA", bbas_unique_percent: 95, bcom_unique_percent: 92, bbas_ebooks_percent: 48, bcom_ebooks_percent: 43, required_basic: 133, required_bcom: 144, existing_basic: 126, existing_bcom: 133 },
-            { faculty: "Facultad de Ingeniería", career: "INGENIERÍA CIVIL QUÍMICA", bbas_unique_percent: 86, bcom_unique_percent: 86, bbas_ebooks_percent: 38, bcom_ebooks_percent: 34, required_basic: 103, required_bcom: 112, existing_basic: 89, existing_bcom: 96 },
+            { 
+                faculty: "Facultad de Ingeniería", 
+                career: "INGENIERÍA CIVIL INDUSTRIAL", 
+                bbas_unique_percent: 92, 
+                bcom_unique_percent: 94, 
+                bbas_ebooks_percent: 43, 
+                bcom_ebooks_percent: 46, 
+                required_basic: 127, 
+                required_bcom: 131, 
+                existing_basic: 117, 
+                existing_bcom: 123,
+                missing_basic_titles: [
+                    { asignatura: 'ELECTIVO DE ÉTICA I: ÉTICA Y SOCIEDAD: UNA MIRADA ACTUAL', title: 'Ética General.', author: 'VIGO, A.', reason: 'Descatalogado' },
+                    { asignatura: 'PROCESOS INDUSTRIALES', title: 'Procesos de transporte y principios de procesos de separación', author: 'Geankoplis, Christie J.', reason: 'Descatalogado' },
+                    { asignatura: 'INNOVACIÓN Y EMPRENDIMIENTO', title: 'Gestión de la tecnología en la empresa', author: 'MAJLUF, Nicolás & MARCOVITCH, Jacques.', reason: 'Descatalogado' },
+                    { asignatura: 'INNOVACIÓN Y EMPRENDIMIENTO', title: 'Innovación tecnológica en las organizaciones', author: 'DOWRO, Manuel & Mandado, Enrique & Fernández López.', reason: 'Descatalogado' },
+                    { asignatura: 'QUÍMICA Y MEDIO AMBIENTE', title: 'Química del Medio Ambiente Y de los Recursos Naturales', author: 'VEGA DE KUYPER, J. C.', reason: 'Descatalogado' },
+                    { asignatura: 'CÁLCULO II', title: 'Cálculo Diferencial E Integral', author: 'Stewart, James', reason: 'Descatalogado' },
+                    { asignatura: 'ECUACIONES DIFERENCIALES', title: 'Ecuaciones Diferenciales Y Sus Aplicaciones.', author: 'BRAUN, M.', reason: 'Descatalogado' },
+                    { asignatura: 'CONSULTORÍA DE EMPRESAS (EV. CICLO Y A+S)', title: 'Consultoría De Negocios', author: 'TOPPIN, Gilbert', reason: 'Descatalogado' },
+                    { asignatura: 'DERECHO DE EMPRESA Y AMBIENTAL', title: 'Fundamentos de derecho ambiental', author: 'Bermúdez Soto, Jorge', reason: 'No Disponible' },
+                    { asignatura: 'CIENCIA Y RESISTENCIA DE MATERIALES', title: 'Resistencia De Materiales', author: 'Mott, Robert L.', reason: 'Descatalogado' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'MECANICA DE FLUIDOS', title: 'Mecánica de Fluidos', author: 'CROWE, Clayton T.', reason: 'Compra 2025' },
+                    { asignatura: 'MECANICA DE FLUIDOS', title: 'Mecanica de Fluidos', author: 'Franzini, Joseph', reason: 'Descatalogado' },
+                    { asignatura: 'ELECTRÓNICA Y ELECTROTECNIA', title: 'Análisis básico de circuitos en ingeniería', author: 'IRWIN, J. D.', reason: 'Descatalogado' },
+                    { asignatura: 'ELECTRÓNICA Y ELECTROTECNIA', title: 'Fundamentos de maquinas electricas', author: 'COGDELL, J.', reason: 'Descatalogado' },
+                    { asignatura: 'PROCESOS INDUSTRIALES', title: 'Operaciones de transferencia de masa', author: 'TREYBAL, Robert', reason: 'Descatalogado' },
+                    { asignatura: 'ECUACIONES DIFERENCIALES', title: 'Ecuaciones diferenciales', author: 'Chungara, Víctor', reason: 'Compra 2025' },
+                    { asignatura: 'TERMODINÁMICA', title: 'Termodinámica', author: 'POTTER, Merle C.', reason: 'Descatalogado' },
+                    { asignatura: 'INGENIERÍA ECONÓMICA', title: 'Ingeniería económica', author: 'RIGGS, James. Bedworth, David.Randhawa, Sabah', reason: 'Agotado' }
+                ]
+            },
+            { 
+                faculty: "Facultad de Ingeniería", 
+                career: "INGENIERÍA CIVIL INFORMÁTICA", 
+                bbas_unique_percent: 95, 
+                bcom_unique_percent: 92, 
+                bbas_ebooks_percent: 48, 
+                bcom_ebooks_percent: 43, 
+                required_basic: 133, 
+                required_bcom: 144, 
+                existing_basic: 126, 
+                existing_bcom: 133,
+                missing_basic_titles: [
+                    { asignatura: 'ELECTIVO DE ÉTICA I: ÉTICA Y SOCIEDAD: UNA MIRADA ACTUAL', title: 'Ética General.', author: 'VIGO, A.', reason: 'Descatalogado' },
+                    { asignatura: 'QUÍMICA Y MEDIO AMBIENTE', title: 'Química Del Medio Ambiente Y De Los Recursos Naturales', author: 'VEGA DE KUYPER, J. C.', reason: 'Descatalogado' },
+                    { asignatura: 'CÁLCULO II', title: 'Cálculo Diferencial E Integral', author: 'Stewart, James', reason: 'Descatalogado' },
+                    { asignatura: 'ECUACIONES DIFERENCIALES', title: 'Ecuaciones Diferenciales Y Sus Aplicaciones.', author: 'BRAUN, M.', reason: 'Descatalogado' },
+                    { asignatura: 'CONSULTORÍA DE EMPRESAS (EV. CICLO Y A+S)', title: 'Consultoría De Negocios', author: 'TOPPIN, Gilbert', reason: 'Descatalogado' },
+                    { asignatura: 'DERECHO DE EMPRESA Y AMBIENTAL', title: 'Fundamentos de derecho ambiental', author: 'Bermúdez Soto, Jorge', reason: 'Descatalogado' },
+                    { asignatura: 'CIENCIA Y RESISTENCIA DE MATERIALES', title: 'Resistencia De Materiales', author: 'Mott, Robert L.', reason: 'Descatalogado' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'REDES MODERNAS', title: 'Introducción a las Redes CCNA', author: 'CISCO', reason: 'Compra 2025' },
+                    { asignatura: 'ESTRUCTURA DE DATOS', title: 'Algoritmos computacionales: introducción al análisis y diseño', author: 'BAASE, Sara', reason: 'No Disponible' },
+                    { asignatura: 'ESTRUCTURA DE DATOS', title: 'Estructura de Datos Orientada a Objetos: Algoritmos con C++', author: 'GUARDATI, Silvia', reason: 'Descatalogado' },
+                    { asignatura: 'ARQUITECTURA DE COMPUTADORES', title: 'Sistemas Operativos Distribuidos', author: 'Tanenbaum, Andrew S.', reason: 'Descatalogado' },
+                    { asignatura: 'ANÁLISIS DE ALGORITMOS', title: 'Introducción a los algoritmos genéticos y a la programación genética', author: 'GESTAL, MARCOS; RIVERO, DANIEL; RABUÑAL, JUAN RAMÓN', reason: 'Descatalogado' },
+                    { asignatura: 'ESPECIALIDAD IV', title: 'La calidad del software y su medida', author: 'HERNÁNDEZ, Juan Francisco', reason: 'Descatalogado' },
+                    { asignatura: 'ECUACIONES DIFERENCIALES', title: 'Ecuaciones diferenciales', author: 'Chungara, Víctor', reason: 'Descatalogado' },
+                    { asignatura: 'TERMODINÁMICA', title: 'Termodinámica', author: 'Potter, Merle C.', reason: 'Descatalogado' },
+                    { asignatura: 'INGENIERÍA ECONÓMICA', title: 'Ingeniería económica', author: 'RIGGS, James. Bedworth, David.Randhawa, Sabah', reason: 'Agotado' },
+                    { asignatura: 'ESPECIALIDAD III (A+S)', title: 'Effective Business Process Management with JBoss BPM', author: 'SCHABELL, Eric', reason: 'Descatalogado' },
+                    { asignatura: 'ESPECIALIDAD III (A+S)', title: 'Sistemas Distribuidos. Principios y Paradigmas', author: 'Tanenbaum, Andrew S.', reason: 'Compra 2025' }
+                ]
+            },
+            { 
+                faculty: "Facultad de Ingeniería", 
+                career: "INGENIERÍA CIVIL QUÍMICA", 
+                bbas_unique_percent: 86, 
+                bcom_unique_percent: 86, 
+                bbas_ebooks_percent: 38, 
+                bcom_ebooks_percent: 34, 
+                required_basic: 103, 
+                required_bcom: 112, 
+                existing_basic: 89, 
+                existing_bcom: 96,
+                missing_basic_titles: [
+                    { asignatura: 'ELECTIVO DE ÉTICA I: ÉTICA Y SOCIEDAD: UNA MIRADA ACTUAL', title: 'Ética General.', author: 'VIGO, A.', reason: 'Descatalogado' },
+                    { asignatura: 'PROYECTO DE TÍTULO I', title: 'Taller De Formulación Y Evaluación De Proyectos.', author: 'Schaffeld, G.', reason: 'No disponible' },
+                    { asignatura: 'FUNDAMENTOS DE PROCESOS QUÍMICOS', title: 'Introducción A Los Procesos Químicos', author: 'MURPHY, R.', reason: 'Descatalogado' },
+                    { asignatura: 'OPERACIONES UNITARIAS', title: 'Procesos de transporte y principios de procesos de separación', author: 'Geankoplis, Christie J.', reason: 'Descatalogado' },
+                    { asignatura: 'SIMULACIÓN DE PROCESOS', title: 'Modelado, Simulación Y Optimización De Procesos Químicos', author: 'Scenna, Nicolás José', reason: 'No disponible' },
+                    { asignatura: 'BIOTECNOLOGÍA INDUSTRIAL', title: 'Microbiología industrial', author: 'Hernández, Alicia', reason: 'Descatalogado' },
+                    { asignatura: 'TRANSFERENCIA DE MASA', title: 'Operaciones de transferencia de masa', author: 'TREYBAL, Robert', reason: 'Descatalogado' },
+                    { asignatura: 'DISEÑO DE REACTORES Y BIORREACTORES', title: 'Elementos de ingeniería de las reacciones químicas', author: 'Fogler, H.S.', reason: 'Descatalogado' },
+                    { asignatura: 'DISEÑO DE PROCESOS QUÍMICOS', title: 'Introducción al Diseño Básico de los Procesos Químicos', author: 'ARCE, E.', reason: 'Descatalogado' },
+                    { asignatura: 'INNOVACIÓN Y EMPRENDIMIENTO', title: 'Gestión de la tecnología en la empresa', author: 'MAJLUF, Nicolás & MARCOVITCH, Jacques.', reason: 'Descatalogado' },
+                    { asignatura: 'INNOVACIÓN Y EMPRENDIMIENTO', title: 'Innovación tecnológica en las organizaciones', author: 'DOWRO, Manuel & Mandado, Enrique & Fernández López.', reason: 'Descatalogado' },
+                    { asignatura: 'QUÍMICA Y MEDIO AMBIENTE', title: 'Química Del Medio Ambiente Y De Los Recursos Naturales', author: 'VEGA DE KUYPER, J. C.', reason: 'Descatalogado' },
+                    { asignatura: 'CÁLCULO II', title: 'Cálculo Diferencial E Integral', author: 'Stewart, James', reason: 'Descatalogado' },
+                    { asignatura: 'ECUACIONES DIFERENCIALES', title: 'Ecuaciones Diferenciales Y Sus Aplicaciones.', author: 'BRAUN, M.', reason: 'Descatalogado' }
+                ],
+                missing_bcom_titles: [
+                    { asignatura: 'PROYECTO DE TÍTULO I', title: 'Preparación y Evaluación de Proyectos de la industria Química', author: 'Guzmán C., Fernando', reason: 'No disponible' },
+                    { asignatura: 'ESPECIALIDAD II: OPERACIONES INDUSTRIALES Y GESTIÓN DE RECURSOS', title: 'Fiabilidad y Seguridad: Su Aplicacion en Procesos Industriales', author: 'CREUS, A.', reason: 'Descatalogado' },
+                    { asignatura: 'INTRODUCCIÓN A LA INGENIERÍA QUÍMICA', title: 'Principios Básicos y Cálculos en Ingeniería Química', author: 'Himmelblau, David M.', reason: 'Compra 2025' },
+                    { asignatura: 'PRINCIPIOS DE GESTIÓN Y ADMINISTRACIÓN', title: 'Hacia una Cultura de Responsabilidad Social', author: 'PELEKAIS, Cira y AGUIRRE, René', reason: 'Descatalogado' },
+                    { asignatura: 'QUÍMICA INORGÁNICA', title: 'Química Inorgánica Descriptiva', author: 'RAYNER-CANHAM, Geoff.', reason: 'Descatalogado' },
+                    { asignatura: 'QUÍMICA ANALÍTICA E INSTRUMENTAL', title: 'Química Analítica', author: 'GARY, Christian.', reason: 'Descatalogado' },
+                    { asignatura: 'MÉTODOS NUMÉRICOS', title: 'Métodos numéricos con MATLAB', author: 'Mathew, J.H.', reason: 'Descatalogado' },
+                    { asignatura: 'OPERACIONES UNITARIAS', title: 'Procesos de transporte y principios de procesos de separación', author: 'Geankoplis, Christie J.', reason: 'Descatalogado' },
+                    { asignatura: 'SIMULACIÓN DE PROCESOS', title: 'Principios elementales de los procesos químicos', author: 'Felder, Richard M.', reason: 'Descatalogado' },
+                    { asignatura: 'BIOTECNOLOGÍA INDUSTRIAL', title: 'Manual del Ingeniero Químico', author: 'Perry, Roberth', reason: 'Descatalogado' },
+                    { asignatura: 'TRANSFERENCIA DE MASA', title: 'Operaciones Unitarias en Ingeniería Química', author: 'McCabe, Warren L.', reason: 'No disponible' },
+                    { asignatura: 'CONTROL DE PROCESOS', title: 'Modelado, Simulación Y Optimización De Procesos Químicos', author: 'Scenna, Nicolás José', reason: 'Compra 2025' },
+                    { asignatura: 'MECANICA DE FLUIDOS', title: 'Mecanica de Fluidos', author: 'CROWE, Clayton T.', reason: 'Compra 2025' },
+                    { asignatura: 'MECANICA DE FLUIDOS', title: 'Mecánica de Fluidos', author: 'Franzini, Joseph', reason: 'Descatalogado' },
+                    { asignatura: 'ECUACIONES DIFERENCIALES', title: 'Ecuaciones diferenciales', author: 'Chungara, Víctor', reason: 'Compra 2025' },
+                    { asignatura: 'INGENIERÍA ECONÓMICA', title: 'Ingeniería económica', author: 'RIGGS, James. Bedworth, David.Randhawa, Sabah', reason: 'Agotado' }
+                ]
+            },
         ];
 
         const redesignData = [
             {
                 faculty: "Facultad de Derecho", 
-                career: "DERECHO", 
+                career: "DERECHO (Rediseño)", 
                 bbas_unique_percent: 97, 
                 bcom_unique_percent: 98, 
                 bbas_ebooks_percent: 47, 
@@ -443,12 +1028,12 @@
                     card.className = 'card flex flex-col justify-between';
                     const formatPercent = (p) => (typeof p === 'number' ? `${p}%` : 'N/A');
                     card.innerHTML = `
-                        <div><p class="text-sm font-semibold text-gray-500 mb-1 text-center">${item.faculty}</p><p class="text-xl font-bold text-gray-900 mb-4 text-center">${item.career}</p></div>
+                        <div><p class="text-sm font-semibold text-gray-500 mb-1">${item.faculty}</p><p class="text-xl font-bold text-gray-900 mb-4">${item.career}</p></div>
                         <div class="grid grid-cols-2 gap-3">
-                            <div class="percent-cell ${getHeatmapColorClass(item.bbas_unique_percent)}"><p class="text-xs font-semibold">BBAS Títulos únicos</p><p class="text-lg font-bold">${formatPercent(item.bbas_unique_percent)}</p></div>
-                            <div class="percent-cell ${getHeatmapColorClass(item.bcom_unique_percent)}"><p class="text-xs font-semibold">BCOM Títulos únicos</p><p class="text-lg font-bold">${formatPercent(item.bcom_unique_percent)}</p></div>
-                            <div class="percent-cell ${getHeatmapColorClass(item.bbas_ebooks_percent)}"><p class="text-xs font-semibold">BBAS Formato electrónico</p><p class="text-lg font-bold">${formatPercent(item.bbas_ebooks_percent)}</p></div>
-                            <div class="percent-cell ${getHeatmapColorClass(item.bcom_ebooks_percent)}"><p class="text-xs font-semibold">BCOM Formato electrónico</p><p class="text-lg font-bold">${formatPercent(item.bcom_ebooks_percent)}</p></div>
+                            <div class="percent-cell ${getHeatmapColorClass(item.bbas_unique_percent)}"><p class="text-xs font-semibold">BBAS T. Únicos</p><p class="text-lg font-bold">${formatPercent(item.bbas_unique_percent)}</p></div>
+                            <div class="percent-cell ${getHeatmapColorClass(item.bcom_unique_percent)}"><p class="text-xs font-semibold">BCOM T. Únicos</p><p class="text-lg font-bold">${formatPercent(item.bcom_unique_percent)}</p></div>
+                            <div class="percent-cell ${getHeatmapColorClass(item.bbas_ebooks_percent)}"><p class="text-xs font-semibold">BBAS E-Books</p><p class="text-lg font-bold">${formatPercent(item.bbas_ebooks_percent)}</p></div>
+                            <div class="percent-cell ${getHeatmapColorClass(item.bcom_ebooks_percent)}"><p class="text-xs font-semibold">BCOM E-Books</p><p class="text-lg font-bold">${formatPercent(item.bcom_ebooks_percent)}</p></div>
                         </div>`;
                     careerCardsContainer.appendChild(card);
                 });
